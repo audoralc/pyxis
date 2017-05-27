@@ -14,7 +14,8 @@ class Header extends React.PureComponent {
     const headerStyle = { 
       gridRow: '1 / 1', 
       gridColumn: '2 / 2', 
-      background: '#fffefb',         
+      background: '#fffefb',
+      border: '1px solid black',          
     }
 
     return (
