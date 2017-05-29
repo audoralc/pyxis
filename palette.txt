@@ -1,0 +1,7 @@
+"RGB Hex","Name","Date","Source","RGB Hex3","HSL","RGB","HTML Keyword"
+"#f9e6d8","","NaN-aN-aN aN:aN:aN","Web Page","#fee","hsl(25,73,91)","rgb(249,230,216)","antiquewhite"
+"#fffefb","","NaN-aN-aN aN:aN:aN","Web Page","#fff","hsl(45,100,99)","rgb(255,254,251)","snow"
+"#fdf2ee","","NaN-aN-aN aN:aN:aN","Web Page","#fff","hsl(15,78,96)","rgb(253,242,238)","seashell"
+"#4d3b3b","","NaN-aN-aN aN:aN:aN","Web Page","#544","hsl(0,13,26)","rgb(77,59,59)","darkslategray"
+"#665052","","NaN-aN-aN aN:aN:aN","Web Page","#655","hsl(354,12,35)","rgb(102,80,82)","dimgray"
+"#4c2721","","NaN-aN-aN aN:aN:aN","Web Page","#522","hsl(8,39,21)","rgb(76,39,33)","darkslategray"

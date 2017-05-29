@@ -10,11 +10,15 @@ injectGlobal`
   }
 
   body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: Alegreya, serif;
+  }
+
+  a {
+    font-family: Alegreya, serif;
   }
 
   body.fontLoaded {
-    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: Lato, sans-serif;
   }
 
   #app {
@@ -23,9 +27,11 @@ injectGlobal`
     min-width: 100%;
   }
 
+  
+
   p,
   label {
-    font-family: Georgia, Times, 'Times New Roman', serif;
+    font-family: Lato, sans-serif;
     line-height: 1.5em;
   }
 `;
