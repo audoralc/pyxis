@@ -12,10 +12,10 @@ const NavLink = glamorous.a({
   padding: '0 .5em', 
   fontFamily: "'Crimson Text', serif",
   textDecoration: 'none', 
-  color: '#000000',
+  color: '#303030',
   ':hover' : { 
-    color: 'red', 
-  }
+    color: '#0000b5', 
+  },
 })
 
 class Header extends React.PureComponent {
@@ -38,13 +38,14 @@ class Header extends React.PureComponent {
         fontWeight: '600',        
       }
 
-        const callButton = {
-          padding: ".75em",
+        const callButton = {          
           fontWeight: "600",
-          color: "#ede8e8",  
-          background: "#665052",
+          color: '#303030',  
+          border: "2px solid #0000b5",
+          padding: '.25em',
           fontFamily: "'Crimson Text', serif", 
           textDecoration: 'none',  
+          margin: '.25em'
         }
 
           const iconBlockStyle = {                       
@@ -55,11 +56,16 @@ class Header extends React.PureComponent {
                 margin: "0 .5em", 
               }
 
+        const logoStyle ={ 
+          padding: '0 1em', 
+        }
     return (
       <div style={headerStyle}>
-        <div style={navbarStyle}> 
-          <nav style={navLinksBlock}> 
-            <NavLink href="/" >Home</NavLink>
+        <div style={navbarStyle}>
+
+          <a href="/" ><img src="http://placehold.it/50x50" style={logoStyle} /></a>
+
+          <nav style={navLinksBlock}>             
             <a href="/subscribe" style={callButton}>Subscribe</a>
             <NavLink href="/about" >About</NavLink>
             <NavLink href="/contact-us" >Contact</NavLink>

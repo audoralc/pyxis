@@ -14,12 +14,12 @@ export default class Home extends React.PureComponent {
     const pageGrid = { 
       display: 'grid',
       gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr 1fr', 
-      gridTemplateRows: '1fr 1fr 1fr 1fr 1fr 10%', 
+      gridTemplateRows: '1fr 50vh 50vh 50vh 50vh 10%', 
     }
 
     
       const ribbonOne = { 
-        background: '#f9e6d8',
+        background: '#FFECDB',
         gridRow: '2 / 2', 
         gridColumn: '1 / 6 span',
       
@@ -33,14 +33,14 @@ export default class Home extends React.PureComponent {
       }
 
       const ribbonThree = { 
-        background: '#744740', 
+        background: '#303030', 
         gridRow: ' 4 / 4', 
         gridColumn: '1 / 6 span',
       
       }
 
       const ribbonFour = {
-        background: '#ede8e8',
+        background: '#f6edeb',
         gridRow: '5 / 5', 
         gridColumn: '1 / 6 span',
        
