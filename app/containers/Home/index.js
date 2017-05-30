@@ -14,7 +14,7 @@ export default class Home extends React.PureComponent {
     const pageGrid = { 
       display: 'grid',
       gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr 1fr', 
-      gridTemplateRows: '1fr 1fr 1fr 1fr 1fr 1fr', 
+      gridTemplateRows: '1fr 1fr 1fr 1fr 1fr 10%', 
     }
 
     

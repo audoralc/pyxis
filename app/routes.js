@@ -18,6 +18,60 @@ export default function createRoutes() {
            .catch(errorLoading);
        },
      },
+      {
+       path: '/subscribe',
+       name: 'Subscribe',
+       getComponent(nextState, comMod) {
+         import('containers/Subscribe')
+           .then(loadModule(comMod))
+           .catch(errorLoading);
+       },
+     },
+      {
+       path: '/about',
+       name: 'About',
+       getComponent(nextState, comMod) {
+         import('containers/About')
+           .then(loadModule(comMod))
+           .catch(errorLoading);
+       },
+     },
+      {
+       path: '/contact-us',
+       name: 'Contact',
+       getComponent(nextState, comMod) {
+         import('containers/Contact')
+           .then(loadModule(comMod))
+           .catch(errorLoading);
+       },
+     },
+      {
+       path: '/faq',
+       name: 'FAQ',
+       getComponent(nextState, comMod) {
+         import('containers/FAQ')
+           .then(loadModule(comMod))
+           .catch(errorLoading);
+       },
+     },
+       {
+       path: '/',
+       name: 'Account',
+       getComponent(nextState, comMod) {
+         import('containers/Account')
+           .then(loadModule(comMod))
+           .catch(errorLoading);
+       },
+     },
+       {
+       path: '/cart',
+       name: 'Cart',
+       getComponent(nextState, comMod) {
+         import('containers/Cart')
+           .then(loadModule(comMod))
+           .catch(errorLoading);
+       },
+     },
      {
       path: '*',
       name: 'notfound',

@@ -10,12 +10,10 @@ injectGlobal`
   }
 
   body {
-    font-family: Alegreya, serif;
+    font-family: 'Crimson Text', serif;
   }
 
-  a {
-    font-family: Alegreya, serif;
-  }
+ 
 
   body.fontLoaded {
     font-family: Lato, sans-serif;
@@ -25,9 +23,7 @@ injectGlobal`
     background-color: #fafafa;
     min-height: 100%;
     min-width: 100%;
-  }
-
-  
+    }  
 
   p,
   label {
