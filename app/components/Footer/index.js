@@ -32,7 +32,7 @@ class Footer extends React.PureComponent {
         display: 'flex', 
         flexDirection: 'row', 
         margin: '2vh 20%',
-        width: '100%',
+        width: '100vw',
       }
         
         const contactBlock ={ 

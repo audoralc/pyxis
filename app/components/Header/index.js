@@ -16,6 +16,7 @@ const NavLink = glamorous.a({
   ':hover' : { 
     color: '#0000b5', 
   },
+  height: '24px',
 })
 
 class Header extends React.PureComponent {
@@ -26,58 +27,65 @@ class Header extends React.PureComponent {
     const headerStyle = { 
       gridRow: '1 / 1', 
       gridColumn: '4 / 6 span', 
-      background: '#f6edeb', 
+      background: '#f6edeb',      
     }
-      const navbarStyle ={ 
-        display: 'flex', 
-      }
+        const navbarStyle ={ 
+          display: 'flex',
+          flexWrap: 'wrap', 
+          alignItems: 'center',
+          alignContent: 'space-between',  
+          padding: '1%',
+          color: '#303030',
+        }         
+           
 
-      const navLinksBlock = {        
-        padding: '1em 0', 
-        fontSize: '1.15em',
-        fontWeight: '600',        
-      }
+            const navLinksBlock = { 
+              display: 'flex',
+              flexWrap: 'wrap', 
+              alignItems: 'center',       
+              margin: '1%',   
+              fontSize: '1.15em',           
+              fontWeight: '600',
+              height: '24px',        
+            }  
 
-        const callButton = {          
-          fontWeight: "600",
-          color: '#303030',  
-          border: "2px solid #0000b5",
-          padding: '.25em',
-          fontFamily: "'Crimson Text', serif", 
-          textDecoration: 'none',  
-          margin: '.25em'
-        }
+            const searchBlockStyle = {
+              display: 'flex',
+              flexWrap: 'wrap', 
+              alignItems: 'center',       
+              margin: '.5em 0',
+              height: '24px',
+            }           
+       
+                const searchBoxStyle = {
+                  width: '5vw',
+                  marginLeft: '.5em',         
+                }
+          const cartStyle ={ 
+            marginLeft: 'auto',                 
+          } 
 
-          const iconBlockStyle = {                       
-            padding: ".75em",
-            margin: '.5em 0',
-           }
-              const iconStyle = {
-                margin: "0 .5em", 
-              }
-
-        const logoStyle ={ 
-          padding: '0 1em', 
-        }
     return (
       <div style={headerStyle}>
-        <div style={navbarStyle}>
-
-          <a href="/" ><img src="http://placehold.it/50x50" style={logoStyle} /></a>
-
+        <div style={navbarStyle}>         
           <nav style={navLinksBlock}>             
-            <a href="/subscribe" style={callButton}>Subscribe</a>
+            <NavLink href="/subscribe" >Subscribe</NavLink>
             <NavLink href="/about" >About</NavLink>
             <NavLink href="/contact-us" >Contact</NavLink>
             <NavLink href="/faq" >FAQ</NavLink>
-            <NavLink href="" > Account</NavLink>         
-          </nav>
+            <NavLink href="" > Account</NavLink>  
+          </nav>             
 
-          <div style={iconBlockStyle} > 
-            <a href="/cart" ><FontIcon className="material-icons" style={iconStyle}>shopping_basket</FontIcon></a>
-            <FontIcon className="material-icons" style={iconStyle}>search</FontIcon>
-          </div>
+            <div style={searchBlockStyle}>         
+              <FontIcon className="material-icons">search</FontIcon>
+              <input type="text" style={searchBoxStyle} /> 
+            </div> 
+
+            <NavLink href="/cart" style={cartStyle}><FontIcon className="material-icons" >shopping_basket</FontIcon></NavLink>        
         </div> 
+
+        
+
       </div>
     );
   }
