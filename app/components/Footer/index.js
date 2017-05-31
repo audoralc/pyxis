@@ -31,8 +31,8 @@ class Footer extends React.PureComponent {
       const infoRibbon={ 
         display: 'flex', 
         flexDirection: 'row', 
-        margin: '2vh 20%',
-        width: '100vw',
+        justifyContent: 'center',
+        margin: '1vh 0',               
       }
         
         const contactBlock ={ 
