@@ -11,7 +11,7 @@ class CardSection extends React.PureComponent {
     return (
       <div>
         <label>
-          <CardElement style={{ hidePostalCode: true }} />
+          <CardElement style={{ hidePostalCode:false }} />
         </label>
       </div>
     );

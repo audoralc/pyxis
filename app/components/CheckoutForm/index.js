@@ -1,5 +1,5 @@
-* CheckoutForm
-*
+/* CheckoutForm
+
 */
 import React from 'react';
 import { injectStripe } from 'react-stripe-elements';
@@ -365,12 +365,12 @@ class CheckoutForm extends React.PureComponent {
         </SelectField>
         <TextField
           onChange={this.handleName}
-          hintText="Styled Hint Text"
+          hintText="Name"
           hintStyle={styles.errorStyle}
         /><br />
         <TextField
           onChange={this.handleCity}
-          hintText="Custom error color"
+          hintText="City"
           errorText="This field is required."
           errorStyle={styles.errorStyle}
         /><br />

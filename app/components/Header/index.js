@@ -19,6 +19,18 @@ const NavLink = glamorous.a({
   height: '24px',
 })
 
+
+const SubButton = glamorous.a({ 
+  borderLeft: '2px solid #0000b5',
+  borderRight: '2px solid #0000b5', 
+  padding: '4px',
+  textDecoration: 'none', 
+  color: '#0000b5',
+  margin: '0', 
+  ':hover' : {
+    background: '#303030', 
+  }
+})
 class Header extends React.PureComponent {
   
 
@@ -43,8 +55,7 @@ class Header extends React.PureComponent {
             const navLinksBlock = { 
               display: 'flex',
               flexWrap: 'wrap', 
-              alignItems: 'center',       
-              margin: '1%',   
+              alignItems: 'center',                 
               fontSize: '1.15em',           
               fontWeight: '600',
               height: '24px',        
@@ -67,11 +78,13 @@ class Header extends React.PureComponent {
           marginLeft: 'auto', 
          }
 
+        
+
     return (
       <div style={headerStyle}>
         <div style={navbarStyle}>         
           <nav style={navLinksBlock}>             
-            <NavLink href="/subscribe" >Subscribe</NavLink>
+            <SubButton href="/subscribe"> Subscribe</SubButton>
             <NavLink href="/about" >About</NavLink>
             <NavLink href="/contact-us" >Contact</NavLink>
             <NavLink href="/faq" >FAQ</NavLink>
