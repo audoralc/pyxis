@@ -31,9 +31,10 @@ class Header extends React.PureComponent {
     }
         const navbarStyle ={ 
           display: 'flex',
-          flexWrap: 'wrap', 
+          flexWrap: 'wrap',         
           alignItems: 'center',
-          alignContent: 'space-between',  
+          alignContent: 'space-between',
+          justifyContent: 'flex-start',   
           padding: '1%',
           color: '#303030',
         }         
@@ -59,11 +60,12 @@ class Header extends React.PureComponent {
        
                 const searchBoxStyle = {
                   width: '5vw',
-                  marginLeft: '.5em',         
+                  marginLeft: '1vw',         
                 }
-          const cartStyle ={ 
-            marginLeft: 'auto',                 
-          } 
+
+         const cartStyle = { 
+          marginLeft: 'auto', 
+         }
 
     return (
       <div style={headerStyle}>
@@ -80,8 +82,10 @@ class Header extends React.PureComponent {
               <FontIcon className="material-icons">search</FontIcon>
               <input type="text" style={searchBoxStyle} /> 
             </div> 
-
-            <NavLink href="/cart" style={cartStyle}><FontIcon className="material-icons" >shopping_basket</FontIcon></NavLink>        
+            
+              <div style={cartStyle}> 
+              <NavLink href="/cart" > <FontIcon className="material-icons">shopping_basket</FontIcon></NavLink>   
+              </div> 
         </div> 
 
         

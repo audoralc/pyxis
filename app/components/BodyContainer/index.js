@@ -52,12 +52,20 @@ class BodyContainer extends React.PureComponent {
             const h2Style ={ 
               margin: '0', 
             }
+
+            const logoStyle ={ 
+              float: 'right',
+              margin: '1em',  
+            }
    
     return (      
         <div style={bodyStyle}> 
           <Header></Header> 
           
-          <div style={leftStyle}>             
+          <div style={leftStyle}> 
+
+             <a href="/" ><img src="http://placehold.it/50x50" style={logoStyle} /></a>
+
             <div style={insetBoxRibbon}>
              <img src="https://68.media.tumblr.com/4afaa584f8f498c8939821bf42c8ad7e/tumblr_n6d6xxHH7n1qd42nao1_500.jpg" height="80%" />
               </div>                            
