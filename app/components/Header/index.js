@@ -38,17 +38,34 @@ class Header extends React.PureComponent {
 
     const headerStyle = { 
       gridRow: '1 / 1', 
-      gridColumn: '4 / 6 span', 
-      background: '#f6edeb',      
-    }
-        const navbarStyle ={ 
+      gridColumn: '1 / 6 span',     
+      background: '#f6edeb', 
+      display: 'grid', 
+      gridTemplateRows: '1fr', 
+      gridTemplateColumns: '1fr 1fr',         
+    }   
+        const logoBlock = {
+          gridRow: '1 / 1', 
+          gridColumn: '1 / span 1',
+          background: '#4d3b3b',
+        }
+
+           const logoStyle ={            
+               margin: '1em',
+               float: 'right',              
+            }
+
+        const navbarStyle ={
+          gridRow: '1 / 1', 
+          gridColumn: '2 / 2 span',  
           display: 'flex',
           flexWrap: 'wrap',         
-          alignItems: 'center',
+          alignItems: 'flex-start',
           alignContent: 'space-between',
           justifyContent: 'flex-start',   
-          padding: '1%',
+          margin: '1em',
           color: '#303030',
+          background: '#f6edeb',
         }         
            
 
@@ -64,9 +81,10 @@ class Header extends React.PureComponent {
             const searchBlockStyle = {
               display: 'flex',
               flexWrap: 'wrap', 
-              alignItems: 'center',       
-              margin: '.5em 0',
+              alignItems: 'center',
+              justifyContent: 'flex-start',      
               height: '24px',
+              marginLeft: '.75em',
             }           
        
                 const searchBoxStyle = {
@@ -82,6 +100,11 @@ class Header extends React.PureComponent {
 
     return (
       <div style={headerStyle}>
+        
+        <div style={logoBlock}> 
+          <a href="/" ><img src="https://previously.tv/m/author-previouslytv-staff-50x50.png"  style={logoStyle} /></a>
+        </div>
+
         <div style={navbarStyle}>         
           <nav style={navLinksBlock}>             
             <SubButton href="/subscribe"> Subscribe</SubButton>

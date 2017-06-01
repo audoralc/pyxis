@@ -6,7 +6,7 @@
 
 import React from 'react';
 import Helmet from 'react-helmet';
-import BodyContainer from 'components/BodyContainer'; 
+import HomeHeadingContainer from 'components/HomeHeadingContainer'; 
 import Footer from 'components/Footer'; 
 
 export default class Home extends React.PureComponent {
@@ -49,7 +49,7 @@ export default class Home extends React.PureComponent {
     return (
       <div style={pageGrid}>
         <Helmet title="Home" meta={[ { name: 'description', content: 'Description of Home' }]}/>
-        <BodyContainer></BodyContainer>
+        <HomeHeadingContainer></HomeHeadingContainer>
         <div style={ribbonOne}></div>
         <div style={ribbonTwo}></div>
         <div style={ribbonThree}></div>

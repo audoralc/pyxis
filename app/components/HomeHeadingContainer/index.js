@@ -1,33 +1,33 @@
 /**
 *
-* BodyContainer
+* HomeHeadingContainer
 *
 */
 
 import React from 'react';
 import Header from 'components/Header'; 
-/* Header witin the BodyConntainer keeps bg colors */ 
+/* Header witin the HomeHeadingContainer keeps bg colors */ 
 
-class BodyContainer extends React.PureComponent {
+class HomeHeadingContainer extends React.PureComponent {
   render() {
     const bodyStyle = {
       gridColumn: '1 / span 6', 
       display: 'grid', 
       gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr 1fr',
-      gridTemplateRows: '1fr 1fr 1fr 1fr', 
+      gridTemplateRows: '10% 1fr 1fr 1fr', 
       height: '100%', 
     }
 
       const leftStyle = {
-        gridRow: '1 / 4 span', 
+        gridRow: '2 / 4 span', 
         gridColumn: '1 / 3 span', 
         background: '#4d3b3b',
-        height: '105vh',         
+        height: '85vh',         
       }
 
         const insetBoxRibbon = {
           background: '#FFECDB', 
-          margin: '25% 10% 10% 10%',          
+          margin: '5% 10% 10% 10%',          
           height: '75vh',  
         }          
 
@@ -53,18 +53,13 @@ class BodyContainer extends React.PureComponent {
               margin: '0', 
             }
 
-            const logoStyle ={ 
-              float: 'right',
-              margin: '1em',  
-            }
+           
    
     return (      
         <div style={bodyStyle}> 
           <Header></Header> 
-          
-          <div style={leftStyle}> 
 
-             <a href="/" ><img src="http://placehold.it/50x50" style={logoStyle} /></a>
+          <div style={leftStyle}>           
 
             <div style={insetBoxRibbon}>
              <img src="https://68.media.tumblr.com/4afaa584f8f498c8939821bf42c8ad7e/tumblr_n6d6xxHH7n1qd42nao1_500.jpg" height="80%" />
@@ -87,4 +82,4 @@ class BodyContainer extends React.PureComponent {
   }
 }
 
-export default BodyContainer;
+export default HomeHeadingContainer;
