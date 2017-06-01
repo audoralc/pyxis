@@ -8,6 +8,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import HomeHeadingContainer from 'components/HomeHeadingContainer'; 
 import Footer from 'components/Footer'; 
+import TierSystem from 'components/TierSystem';
 
 export default class Home extends React.PureComponent {
   render() {
@@ -21,13 +22,6 @@ export default class Home extends React.PureComponent {
       const ribbonOne = { 
         background: '#FFECDB',
         gridRow: '2 / 2', 
-        gridColumn: '1 / 6 span',
-      
-      }
-
-      const ribbonTwo = { 
-        background: '#665052',
-        gridRow: '3 / 3', 
         gridColumn: '1 / 6 span',
       
       }
@@ -51,7 +45,7 @@ export default class Home extends React.PureComponent {
         <Helmet title="Home" meta={[ { name: 'description', content: 'Description of Home' }]}/>
         <HomeHeadingContainer></HomeHeadingContainer>
         <div style={ribbonOne}></div>
-        <div style={ribbonTwo}></div>
+        <TierSystem></TierSystem>
         <div style={ribbonThree}></div>
         <div style={ribbonFour}></div>
         <Footer></Footer>
