@@ -22,7 +22,7 @@ class HomeHeadingContainer extends React.PureComponent {
         gridRow: '2 / 4 span', 
         gridColumn: '1 / 3 span', 
         background: '#4d3b3b',
-        height: '85vh',         
+              
       }
 
         const insetBoxRibbon = {
