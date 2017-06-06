@@ -21,8 +21,7 @@ class HomeHeadingContainer extends React.PureComponent {
       const leftStyle = {
         gridRow: '2 / 4 span', 
         gridColumn: '1 / 3 span', 
-        background: '#4d3b3b',
-              
+        background: '#4d3b3b',             
       }
 
         const insetBoxRibbon = {
@@ -35,25 +34,25 @@ class HomeHeadingContainer extends React.PureComponent {
         gridRow: '2 / 4 span',
         gridColumn: '4 / 6 span',
         background: '#f6edeb',
-        padding: '2em',       
+         
       }
 
         const headerBlock = {
-            gridRow: '3 / 4',
-            gridColumn: '3 / 5 span',
-            zIndex: '2', 
-            marginTop: '-10vh',                           
+            padding: '2em',  
+                                       
           } 
 
             const h1Style = {
-              margin: '0', 
+              margin: '0',
+              color: '#303030', 
             }
 
             const h2Style ={ 
               margin: '0', 
+               
             }
 
-           
+        
    
     return (      
         <div style={bodyStyle}> 
@@ -67,13 +66,14 @@ class HomeHeadingContainer extends React.PureComponent {
             </div>
 
             
-           <div style={headerBlock}> 
-                <h1 style={h1Style}> TITLE TITLE TITLE TITLE TITLE</h1>
-                <h2 style={h2Style}> subtitle subtitle subtitle subtitle            </h2>
-          </div> 
+         
           
           <div style={rightStyle}>
-          
+               <div style={headerBlock}> 
+                <h1 style={h1Style}> man's folly is your gain </h1>
+                <h2 style={h2Style}> boxes Pandora would've loved</h2>
+          </div>
+           
           </div>
 
         </div>

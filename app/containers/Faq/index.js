@@ -24,11 +24,12 @@ export default class Faq extends React.PureComponent {
 
       const headerBlock = { 
        marginTop: '5%',
-       textAlign: 'center', 
+       textAlign: 'center',
+       zIndex: '2',        
       }    
 
         const imageStyle = {
-          marginTop: '2%',
+          
         }
 
     return (
@@ -38,7 +39,7 @@ export default class Faq extends React.PureComponent {
 
         <BodyContainer> 
           <div style={headerBlock}>
-          <h1 > Frequently Asked Questions</h1>
+          <h1>Frequently Asked Questions</h1>
 
           <img src="https://placeholdit.co//i/500x250" style={imageStyle}/>
           </div> 

@@ -21,14 +21,14 @@ const NavLink = glamorous.a({
 
 
 const SubButton = glamorous.a({ 
-  borderLeft: '2px solid #0000b5',
-  borderRight: '2px solid #0000b5', 
-  padding: '4px',
+  background: '#303030',
+  color: '#f6edeb',   
   textDecoration: 'none', 
-  color: '#0000b5',
-  margin: '0', 
+  padding: '.25em .5em',
+  marginRight: '.5em',   
   ':hover' : {
-    background: '#303030', 
+    color: '#303030',
+    background: '#f6edeb',
   }
 })
 class Header extends React.PureComponent {
@@ -42,7 +42,8 @@ class Header extends React.PureComponent {
       background: '#f6edeb', 
       display: 'grid', 
       gridTemplateRows: '1fr', 
-      gridTemplateColumns: '1fr 1fr',         
+      gridTemplateColumns: '1fr 1fr',
+           
     }   
         const logoBlock = {
           gridRow: '1 / 1', 
@@ -73,7 +74,7 @@ class Header extends React.PureComponent {
               display: 'flex',
               flexWrap: 'wrap', 
               alignItems: 'center',                 
-              fontSize: '1.15em',           
+              fontSize: '1.25em',           
               fontWeight: '600',
               height: '24px',        
             }  

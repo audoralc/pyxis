@@ -15,79 +15,79 @@ const AnswersBlock = glamorous.section ({
       width: '80%',
 })
 
-const QuestionBlock = glamorous.div ({ 
-
-})
-
-
 class Faqquestions extends React.PureComponent {
   render() {
+
+    const questionStyle = {
+      margin: '2em 0',
+      fontSize: '1.25em',
+      borderBottom: '2px solid #303030',
+    } 
+
     return (
       <AnswersBlock>
 
           <Accordion> 
 
-            <AccordionItem title="What can I expect in each box?">              
+            <AccordionItem title="What can I expect in each box? +" style={questionStyle}>              
             <p><ReactPlaceholder type='text' rows={6}></ReactPlaceholder></p>
             </AccordionItem>  
            
-            <AccordionItem title="How does my subscription work after I’ve paid for a subscription plan and set up an account?"> 
+            <AccordionItem title="How does my subscription work after I’ve paid for a subscription plan and set up an account? +" style={questionStyle}> 
               <p><ReactPlaceholder type='text' rows={6}></ReactPlaceholder></p>
             </AccordionItem>  
            
-            <AccordionItem title="How does the automatic billing work for my subscription?"> 
+            <AccordionItem title="How does the automatic billing work for my subscription? +" style={questionStyle}> 
               <p><ReactPlaceholder type='text' rows={6}></ReactPlaceholder></p>
             </AccordionItem>          
 
-            <AccordionItem title="Will I be charged sales tax and/or any fees on my subscription?">
+            <AccordionItem title="Will I be charged sales tax and/or any fees on my subscription? +" style={questionStyle}>
             <p><ReactPlaceholder type='text' rows={6}></ReactPlaceholder></p>
             </AccordionItem>       
 
-            <AccordionItem title="What is your refund policy?">
+            <AccordionItem title="What is your refund policy? +" style={questionStyle}>
               <p><ReactPlaceholder type='text' rows={6}></ReactPlaceholder></p>
             </AccordionItem>              
             
-            <AccordionItem title="When do you ship out the boxes each month?">
+            <AccordionItem title="When do you ship out the boxes each month? +" style={questionStyle}>
               <p><ReactPlaceholder type='text' rows={6}></ReactPlaceholder></p>
             </AccordionItem>      
 
-            <AccordionItem title="Do you ship internationally?">
+            <AccordionItem title="Do you ship internationally? +" style={questionStyle}>
               <p><ReactPlaceholder type='text' rows={6}></ReactPlaceholder></p>
             </AccordionItem>            
 
-            <AccordionItem title="Help! my box hasn't arrived.">
+            <AccordionItem title="Help! my box hasn't arrived. +" style={questionStyle}>
               <p><ReactPlaceholder type='text' rows={6}></ReactPlaceholder></p>
             </AccordionItem>            
 
-            <AccordionItem title="Can I return or exchange a box if I don’t like any of the products?">
+            <AccordionItem title="Can I return or exchange a box if I don’t like any of the products? +" style={questionStyle}>
               <p><ReactPlaceholder type='text' rows={6}></ReactPlaceholder></p>
             </AccordionItem>            
 
-            <AccordionItem title="How often can I skip a given box or renewal?">
+            <AccordionItem title="How often can I skip a given box or renewal? +" style={questionStyle}>
               <p><ReactPlaceholder type='text' rows={6}></ReactPlaceholder></p>
             </AccordionItem>            
 
-            <AccordionItem title="How do I cancel my subscription?">
+            <AccordionItem title="How do I cancel my subscription? +" style={questionStyle}>
               <p><ReactPlaceholder type='text' rows={6}></ReactPlaceholder></p>
             </AccordionItem>         
 
-            <AccordionItem title="">
+            <AccordionItem title="Sgt Pepper's Lonely Hearts Club +" style={questionStyle}>
               <p><ReactPlaceholder type='text' rows={6}></ReactPlaceholder></p>
             </AccordionItem>    
 
-            <AccordionItem title="">
+            <AccordionItem title="The White Album +" style={questionStyle}>
               <p><ReactPlaceholder type='text' rows={6}></ReactPlaceholder></p>
             </AccordionItem>     
 
-            <AccordionItem title="">
+            <AccordionItem title="Magical Mystery Tour +" style={questionStyle}>
               <p><ReactPlaceholder type='text' rows={6}></ReactPlaceholder></p>
             </AccordionItem>         
 
-            <AccordionItem title="">
+            <AccordionItem title="Rubber Soul +" style={questionStyle}>
               <p><ReactPlaceholder type='text' rows={6}></ReactPlaceholder></p>
             </AccordionItem>
-          
-
 
          </Accordion> 
       </AnswersBlock>
