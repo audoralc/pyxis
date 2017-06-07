@@ -26,20 +26,23 @@ class HomeHeadingContainer extends React.PureComponent {
 
         const insetBoxRibbon = {
           background: '#FFECDB', 
-          margin: '5% 10% 10% 10%',          
-          height: '75vh',  
+          margin: '5% 10% 0 10%',          
+          height: '75vh',
+          width: '65%',        
         }          
 
       const rightStyle= { 
         gridRow: '2 / 4 span',
         gridColumn: '4 / 6 span',
         background: '#f6edeb',
-         
+        display: 'flex', 
+        flexDirection: 'column', 
+        justifyContent: 'space-between', 
       }
 
         const headerBlock = {
-            padding: '2em',  
-                                       
+            padding: '2em',
+                                                   
           } 
 
             const h1Style = {
@@ -48,8 +51,16 @@ class HomeHeadingContainer extends React.PureComponent {
             }
 
             const h2Style ={ 
-              margin: '0', 
-               
+              margin: '.5em 0', 
+              color: '#017B63',
+              fontStyle: 'italic', 
+            }
+
+            const imgStyle = {                
+                 height: '40%', 
+                 float: 'right',
+                 marginTop: '-25%',
+                 marginBottom: '-5%',    
             }
 
         
@@ -62,20 +73,21 @@ class HomeHeadingContainer extends React.PureComponent {
 
             <div style={insetBoxRibbon}>
              <img src="https://68.media.tumblr.com/4afaa584f8f498c8939821bf42c8ad7e/tumblr_n6d6xxHH7n1qd42nao1_500.jpg" height="80%" />
-              </div>                            
-            </div>
-
-            
+             
+              </div> 
+                  <img src="http://i.imgur.com/Ez7kdHg.png" style={imgStyle} />                    
+            </div>          
          
           
           <div style={rightStyle}>
                <div style={headerBlock}> 
                 <h1 style={h1Style}> man's folly is your gain </h1>
-                <h2 style={h2Style}> boxes Pandora would've loved</h2>
-          </div>
-           
-          </div>
+                <h2 style={h2Style}> bespoke luxury boxes based on the 7 sins </h2>                  
 
+          </div>
+          
+          </div>
+          
         </div>
         
     );

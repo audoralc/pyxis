@@ -23,8 +23,12 @@ injectGlobal`
     background-color: #fafafa;
     min-height: 100%;
     min-width: 100%;
-    }  
-
+  }  
+  
+  input, button, submit { 
+    border:none; 
+  } 
+  
   p,
   label {
     font-family: Lato, sans-serif;

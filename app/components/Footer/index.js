@@ -15,7 +15,17 @@ const NavLink = glamorous.a({
     margin: '2px', 
     fontWeight: 'bold',
     ':hover' : { 
-    color: '#0000b5', 
+    color: '#567fbb', 
+  },
+})
+
+const SocialIcon = glamorous.a({
+    padding: '.25em',
+    fontSize: '1.5em',
+    textDecoration: 'none', 
+    color: '#F2F1EF',
+   ':hover' : { 
+    color: '#567fbb', 
   },
 })
 
@@ -63,9 +73,6 @@ class Footer extends React.PureComponent {
           const socialIconBlock = {
             fontSize: '1.5em',           
           }
-              const iconStyle = {
-                padding: '.25em',
-              }
 
           const copyrightStyle = {
            textAlign: 'center', 
@@ -74,6 +81,8 @@ class Footer extends React.PureComponent {
           const logoStyle = {
             margin: '1em 0',
           }
+
+          
 
     return (
       <div style={footerStyle}>
@@ -101,9 +110,9 @@ class Footer extends React.PureComponent {
             <h3 style={h3Style}>Connect</h3>
 
             <div style={socialIconBlock}> 
-              <FaFacebookSquare style={iconStyle}></FaFacebookSquare>
-              <FaTwitterSquare style={iconStyle}></FaTwitterSquare>
-              <FaInstagram style={iconStyle}> </FaInstagram>
+              <SocialIcon href=""><FaFacebookSquare ></FaFacebookSquare></SocialIcon>
+              <SocialIcon href=""><FaTwitterSquare ></FaTwitterSquare></SocialIcon>
+              <SocialIcon href=""><FaInstagram > </FaInstagram></SocialIcon>
             </div>
           </div>
 

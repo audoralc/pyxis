@@ -43,6 +43,7 @@ class Header extends React.PureComponent {
       display: 'grid', 
       gridTemplateRows: '1fr', 
       gridTemplateColumns: '1fr 1fr',
+      height: 'auto', 
            
     }   
         const logoBlock = {
@@ -52,15 +53,18 @@ class Header extends React.PureComponent {
         }
 
            const logoStyle ={            
-               margin: '1em',
-               float: 'right',              
+               margin: '.25em 1em',
+               float: 'right', 
+               height: '50px', 
+               width: '50px',             
             }
 
         const navbarStyle ={
           gridRow: '1 / 1', 
           gridColumn: '2 / 2 span',  
           display: 'flex',
-          flexWrap: 'wrap',         
+          flexWrap: 'wrap',   
+          flexShrink: '1',       
           alignItems: 'flex-start',
           alignContent: 'space-between',
           justifyContent: 'flex-start',   
@@ -103,7 +107,7 @@ class Header extends React.PureComponent {
       <div style={headerStyle}>
         
         <div style={logoBlock}> 
-          <a href="/" ><img src="https://previously.tv/m/author-previouslytv-staff-50x50.png"  style={logoStyle} /></a>
+          <a href="/" ><img src="http://i.imgur.com/Ez7kdHg.png"  style={logoStyle} /></a>
         </div>
 
         <div style={navbarStyle}>         

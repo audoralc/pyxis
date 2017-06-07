@@ -12,86 +12,83 @@ class TierSystem extends React.PureComponent {
     const tierRibbon = { 
         background: '#665052',
         gridRow: '3 / 3', 
-        gridColumn: '1 / 6 span',
-        display: 'flex', 
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        padding: '5%',      
+        gridColumn: '1 / 6 span',       
       }
-        const leftTierList ={ 
-          width: '30%', 
-          height: '100%', 
+    
+        const tierDetails = {                
           display: 'flex', 
           flexDirection: 'column',
-          justifyContent: 'space-around', 
-          alignItems: 'center',      
-        }
-          const tier = {
-            background: '#3563a8',
-            height: '150px', 
-            width: '150px',
-            margin: '1em', 
-          }
-
-        const rightTierDetails = {
-          width: '70%', 
-          height: '100%', 
-          display: 'flex', 
-          flexDirection: 'column',
-          justifyContent: 'space-around',   
+          justifyContent: 'space-between',  
+          margin: '0 auto', 
+          padding: '5%',  
+          width: '70%',   
         }
 
           const detailGroup = {
             display: 'flex', 
             flexDirection: 'row',
-            justifyContent: 'space-around',
+            alignItems: 'center',       
+            flexWrap: 'wrap',  
+            justifyContent: 'space-between',              
             alignItems: 'center',   
+            margin: '1em 0',
+            textAlign: 'center',     
           }
 
             const smDetailBlock = {
-              background: '#3563a8',
+              background: '#0c3a7f',
               height: '50px', 
-              width: '50px', 
+              width: '50px',
+                          
             }
 
             const mdDetailBlock = {
               height: '80px', 
               width: '80px', 
               background: '#0c3a7f',
+                            
             }
 
             const lgDetailBlock = {
-              width: '110px', 
-              height: '110px', 
-              background: '#0c3a7f',
+              height: '120px', 
+              width: '120px', 
+              background: '#0c3a7f',                              
             }
+
+            
+            const headerStyle ={ 
+              minWidth: '80px',
+            }
+
     return (
 
-      <div style={tierRibbon}>
-        <div style={leftTierList}>
-          <div style={tier}></div> 
-          <div style={tier}></div>
-          <div style={tier}></div> 
+      <div style={tierRibbon}> 
+
+        <div style={tierDetails}>    
+
+          <div style={detailGroup}> 
+            <h2 style={headerStyle}> Box Sizes</h2>          
+            <p style={lgDetailBlock}>7 items</p>
+            <p style={mdDetailBlock}></p> 
+           <p style={smDetailBlock}>$79</p>     
+          </div> 
+
+         <div style={detailGroup}> 
+            <h2 style={headerStyle}> Box Sizes</h2>          
+            <p style={lgDetailBlock}>7 items</p>
+            <p style={mdDetailBlock}></p> 
+           <p style={smDetailBlock}>$79</p>     
+          </div> 
+
+           <div style={detailGroup}> 
+            <h2 style={headerStyle}> Box Sizes</h2>          
+            <p style={lgDetailBlock}>7 items</p>
+            <p style={mdDetailBlock}></p> 
+           <p style={smDetailBlock}>$79</p>     
+          </div> 
+
         </div>
 
-
-        <div style={rightTierDetails}>
-          <div style={detailGroup}>
-            <div style={smDetailBlock}></div> 
-            <div style={mdDetailBlock}></div>
-            <div style={lgDetailBlock}></div> 
-          </div> 
-          <div style={detailGroup}>
-            <div style={smDetailBlock}></div> 
-            <div style={mdDetailBlock}></div>
-            <div style={lgDetailBlock}></div> 
-          </div> 
-           <div style={detailGroup}>
-            <div style={smDetailBlock}></div> 
-            <div style={mdDetailBlock}></div>
-            <div style={lgDetailBlock}></div> 
-          </div> 
-        </div>
       </div>
     );
   }
