@@ -13,7 +13,7 @@ const NavLink = glamorous.a({
   textDecoration: 'none', 
   color: '#000000',
   ':hover' : { 
-    color: '#0000b5', 
+    color: '#0c3a7f', 
   },
   height: '24px',
 })
@@ -21,16 +21,21 @@ const NavLink = glamorous.a({
 
 
 const SubButton = glamorous.button({ 
-  background: '#000000',
-  textDecoration: 'none', 
+  background: '#0c3a7f',
+  textDecoration: 'none',
+  border: '2px solid #f6edeb',  
   color: '#f6edeb',   
   padding: '.25em .5em',
   fontSize: '1em',
   marginRight: '.5em',   
   ':hover' : {
-    background: '#017B63',
+    color: '#017B63',
+    border: '2px solid #017B63',
+    background: '#f6edeb',
   }
 })
+
+
 class Header extends React.PureComponent {
   
 

@@ -9,6 +9,15 @@ import Helmet from 'react-helmet';
 import Header from 'components/Header'; 
 import Footer from 'components/Footer'; 
 import BodyContainer from 'components/BodyContainer'; 
+import ContactForm from 'components/ContactForm';
+import glamorous from 'glamorous'; 
+
+const ContactInfo = glamorous.section({
+  background: '#28a28a',
+  padding: '2em', 
+  fontSize: '1.25em',
+
+}) 
 
 export default class Contact extends React.PureComponent {
   render() {
@@ -16,56 +25,43 @@ export default class Contact extends React.PureComponent {
      const pageGrid = { 
       display: 'grid',
       gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr 1fr', 
-      gridTemplateRows: '1fr 50vh 50vh 50vh 50vh 10%', 
+      gridTemplateRows: '1fr auto auto auto auto 10%',
     }
-
+      const bodyReset = {
+        display: 'flex', 
+        flexDirection: 'row', 
+      }
+      
         const headerBlock ={  
-          textAlign: 'center', 
-        }
-
-        const formStyle ={ 
-          width: '80%',
-          margin: '0 auto', 
-          display: 'flex', 
-          flexDirection: 'column', 
-        }
-
+            textAlign: 'center',          
+          }
+     
     return (
       
       <div style={pageGrid}>
         <Helmet title="Contact" meta={[ { name: 'description', content: 'Description of Contact' }]}/>
         <Header></Header>
         <BodyContainer> 
-          <section> 
-
-            <div className="header_block" style={headerBlock}> 
+          <div className="header_block" style={headerBlock}> 
             <h1> Get in touch</h1>
             <h2>yes hello this will be clever whenever I get to writing copy</h2>
-            </div>
+          </div>  
 
-            <form style={formStyle}>              
-              <p><label>First Name *</label>
-              <input type="text" name="first-name" required/>
-              <label>Last Name *</label>
-              <input type="text" name="last-name" required/>
-              </p>
-              
-              <p>              
-              <label>Email *</label>
-              <input type="text" name="email" required/>
-              </p>
+          <div style={bodyReset}>             
+            <ContactForm> </ContactForm>
 
-              <p>
-              <label>Subject</label>
-              <input type="text" name="subject" />
-              </p>
+            <div> 
+              <ContactInfo> 
+                <address> 
+                  1530 Hesiod Way <br/>
+                  Elpis, GA 33333 <br />
+                  <a href="mailto:help@pyxis.com"> help@pyxis.com </a>
+                </address>
+              </ContactInfo>
 
-              <textarea name="message" placeholder="message"></textarea>
-
-              <button type="submit">Submit</button>
-            </form>
-          </section>
-
+              <section > </section>
+            </div>          
+          </div>
         </BodyContainer>
         <Footer></Footer>
       </div>

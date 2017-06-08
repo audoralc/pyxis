@@ -10,14 +10,18 @@ import glamorous from 'glamorous';
 
 const SubButton = glamorous.button ( {
   background: '#017B63',
-  color: '#f6edeb',   
+  color: '#f6edeb',  
+  border: '2px solid #f6edeb', 
   textDecoration: 'none', 
   padding: '.25em .5em',
-  fontSize: '1.25em',
+  fontSize: '1.5em',
   fontWeight: 'bold', 
   fontFamily: 'Crimson Text', 
   ':hover' : {
-    color: '#000000',
+    color: '#017B63',
+    background: '#f6edeb', 
+    border: '2px solid #017B63',
+   
   }
 })
 

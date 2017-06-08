@@ -25,14 +25,17 @@ injectGlobal`
     min-width: 100%;
   }  
   
-  input, button, submit { 
-    border:none; 
-  } 
+
 
   h1, h2 { 
     font-family: 'Crimson Text', serif; 
   }
   
+  input, textarea {
+    background-color: #f6edeb;
+    border: 1px solid #000000;
+  }
+
   p,
   label {
     font-family: Lato, sans-serif;

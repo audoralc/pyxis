@@ -19,7 +19,7 @@ class Faqquestions extends React.PureComponent {
   render() {
 
     const questionStyle = {
-      margin: '2em 0',
+      margin: '4em 0',
       fontSize: '1.25em',
       borderBottom: '2px solid #303030',
     } 
