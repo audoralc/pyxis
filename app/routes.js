@@ -17,15 +17,7 @@ export default function createRoutes() {
            .then(loadModule(comMod))
            .catch(errorLoading);
        },
-     },
-      {
-       path: '/subscribe',
-       name: 'Subscribe',
-       getComponent(nextState, comMod) {
-         import('containers/Subscribe')
-           .then(loadModule(comMod))
-           .catch(errorLoading);
-       },
+   
      },
       {
        path: '/about',
@@ -55,10 +47,19 @@ export default function createRoutes() {
        },
      },
        {
-       path: '/',
+       path: '/account',
        name: 'Account',
        getComponent(nextState, comMod) {
          import('containers/Account')
+           .then(loadModule(comMod))
+           .catch(errorLoading);
+       },
+    },
+       {
+       path: '/login',
+       name: 'Login or Join',
+       getComponent(nextState, comMod) {
+         import('containers/SignInSignUp')
            .then(loadModule(comMod))
            .catch(errorLoading);
        },

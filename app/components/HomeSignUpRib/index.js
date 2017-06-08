@@ -12,13 +12,12 @@ const SubButton = glamorous.button ( {
   background: '#017B63',
   color: '#f6edeb',   
   textDecoration: 'none', 
-  padding: '.5em',  
+  padding: '.25em .5em',
   fontSize: '1.25em',
   fontWeight: 'bold', 
   fontFamily: 'Crimson Text', 
   ':hover' : {
-    color: '#017B63',
-    background: '#f6edeb',
+    color: '#000000',
   }
 })
 

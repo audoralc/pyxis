@@ -10,13 +10,13 @@ injectGlobal`
   }
 
   body {
-    font-family: 'Crimson Text', serif;
+    font-family: 'Lato', serif;
   }
 
  
 
   body.fontLoaded {
-    font-family: Lato, sans-serif;
+    font-family: 'Lato', sans-serif;
   }
 
   #app {
@@ -28,6 +28,10 @@ injectGlobal`
   input, button, submit { 
     border:none; 
   } 
+
+  h1, h2 { 
+    font-family: 'Crimson Text', serif; 
+  }
   
   p,
   label {
