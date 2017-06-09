@@ -4,8 +4,6 @@
 import React from 'react';
 import { injectStripe } from 'react-stripe-elements';
 import CardSection from 'components/CardSection';
-import MenuItem from 'material-ui/MenuItem';
-import SelectField from 'material-ui/SelectField';
 
 class CheckoutForm extends React.PureComponent {
   constructor(props) {
@@ -219,9 +217,9 @@ class CheckoutForm extends React.PureComponent {
 
           <div style={{ marginTop: '5%' }}>
             <form>
-              <SelectField onChange={this.handleDeliverState} maxHeight={200} menuStyle={{ background: 'white', height: '78%' }} value={this.state.value}>
+              <select onChange={this.handleDeliverState}>{this.state.value}
                 {countryDropdown}
-              </SelectField>
+              </select>
             </form>
           </div>
 
@@ -242,123 +240,73 @@ class CheckoutForm extends React.PureComponent {
       );
     }
   }
-  render() {
-    const bodyStyle = {
-      height: '100%',
-      background: '#f6edeb',
-    };
-    const selectStyle = {
-      background: 'white',
-      height: '78%',
-    };
-    const formStyle = {
-      display: 'flex',
-      flexDirection: 'column',
-      fontSize: '1.9em',
-      fontWeight: 'bold',
-      marginBottom: '5%',
-    };
-    const belowDropDownStyle = {
-      display: 'flex',
-      flexDirection: 'column',
-    };
-    const buttonStyle = {
-      backgroundColor: '#4CAF50', /* Green */
-      border: 'none',
-      color: 'white',
-      padding: '15px 32px',
-      textAlign: 'center',
-      textDecoration: 'none',
-      display: 'inline-block',
-      fontSize: '16px',
-    };
-    const tierStyle = {
-      display: 'flex',
-      flexDirection: 'column',
-    };
+  render() {  
 
     return (
-      <div style={bodyStyle}>
-        <div style={formStyle}>Contacts Info</div>
-        <div>
-          <form>
+      <div>
 
-            <div style={tierStyle}>
-              Name
-              <input type="text" onChange={this.handleName} placeholder="name" />
-              <br />
-            </div>
+        <section> 
+          <h2>Contacts Info</h2>
 
-            <div style={tierStyle}>
-              Email
-              <input onChange={this.handleEmail} placeholder="Email" />
-              <br />
-            </div>
+            <label> Name </label>
+            <input type="text" onChange={this.handleName} placeholder="name" />             
+    
+          
+            <label> Email</label>
+            <input onChange={this.handleEmail} placeholder="Email" />
+      
+    
+            <label> Password </label>              
+            <input type="text" onChange={this.handlePassword} placeholder="password" />            
+        </section> 
 
-            <div style={tierStyle}>
-              Password
-              <input type="text" onChange={this.handlePassword} placeholder="password" />
-              <br />
-            </div>
-
-          </form>
-        </div>
-
-        <div>
-          <div style={formStyle}>Billing Address</div>
-          <form>
-            <SelectField menuStyle={selectStyle} value={this.state.value} onChange={this.handleState} maxHeight={200}>
+       
+        <section>
+     
+          <h2> Billing Address </h2>
+         
+            <select>
               {countryDropdown}
-            </SelectField>
-          </form>
-        </div>
+            </select>   
 
-        <div style={belowDropDownStyle}>
-          <form>
-
-            <div style={tierStyle}>
-              City
+              <label> City </label>
               <input onChange={this.handleCity} placeholder="City" />
-              <br />
-            </div>
 
-            <div style={tierStyle}>
-              Address
+              <label> Address </label>
               <input onChange={this.handleBillingAddress} placeholder="Address" />
-              <br />
-            </div>
+        
 
-          </form>
+        
+            <h2> Credit Card Information </h2>
+            <CardSection />     
 
-          <form>
-            Credit Card Information
-            <CardSection />
-          </form>
+     
 
-        </div>
-
-        Use billing address as shipping address?
+        <p> Use billing address as shipping address? </p>
 
         <input type="checkbox" onChange={this.handleCheckBox} text="Submit" />
         {this.handleDeliverAddress()}
 
-        <div style={tierStyle}>
-          Tier One
-          <button style={buttonStyle} onTouchTap={this.handleSubmit}>
-            Submit
-          </button>
+        </section>  
 
-          TierTwo
-          <button style={buttonStyle} onTouchTap={this.handleSubmitTwo}>
-            Submit
-          </button>
+      <section> 
+            <h3> Tier One </h3>
+            <button onTouchTap={this.handleSubmit}>
+              Submit
+            </button>
 
-          TierThree
-          <button style={buttonStyle} onTouchTap={this.handleSubmitThree}>
-            Submit
-          </button>
-        </div>
-      </div>
+            <h3> TierTwo </h3>
+            <button onTouchTap={this.handleSubmitTwo}>
+              Submit
+            </button>
+
+            <h3>Tier Three</h3>
+            <button onTouchTap={this.handleSubmitThree}>
+              Submit
+            </button>
+        </section>
+
+      </div> 
     );
   }
 }
@@ -418,7 +366,7 @@ const states = [
 
 for (let i = 0; i < 50; i++) {
   countryDropdown.push(
-    <MenuItem value={states[i]} key={i} primaryText={states[i]} />
+    <option> value={states[i]} key={i} primaryText={states[i]}  </option> 
   );
 }
 export default injectStripe(CheckoutForm);

@@ -1,26 +1,23 @@
+
+
+
+
+
 import React from 'react';
 import { Elements } from 'react-stripe-elements';
 import CheckoutForm from 'components/CheckoutForm';
 
-class MyStoreCheckout extends React.PureComponent {
+class CheckoutWrapper extends React.PureComponent {
   render() {
 
-  
-
-    return (
-      
-    
-           
+    return (   
         <div> 
           <Elements>
             <CheckoutForm />
           </Elements>
         </div>
-
-     
-      
     );
   }
 }
-export default MyStoreCheckout;
+export default CheckoutWrapper;
 
