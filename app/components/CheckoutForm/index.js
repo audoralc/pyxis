@@ -4,18 +4,6 @@
 import React from 'react';
 import { injectStripe } from 'react-stripe-elements';
 import CardSection from 'components/CardSection';
-import glamorous from 'glamorous'; 
-import { FaDollar } from 'react-icons/lib/fa'; 
-
-const TierBlock = glamorous.div({
-  background: '#FAFAFA',
-  border: '2px solid #FAFAFA', 
-  width: '40%', 
-  height: '20%',
-  padding: '1em',
-  margin: '0 2em',
-  textAlign: 'center',
-})
 
 
 
