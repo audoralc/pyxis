@@ -82,6 +82,17 @@ export default function createRoutes() {
            .catch(errorLoading);
        },
      },
+
+      {
+       path: '/dashboard',
+       name: 'Dashboard',
+       getComponent(nextState, comMod) {
+         import('containers/AdminDashboard')
+           .then(loadModule(comMod))
+           .catch(errorLoading);
+       },
+   
+     },
      {
       path: '*',
       name: 'notfound',
