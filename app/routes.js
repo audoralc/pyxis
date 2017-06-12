@@ -65,10 +65,10 @@ export default function createRoutes() {
        },
      },
        {
-       path: '/cart',
-       name: 'Cart',
+       path: '/subscribe',
+       name: 'Subscribe',
        getComponent(nextState, comMod) {
-         import('containers/Cart')
+         import('containers/Subscribe')
            .then(loadModule(comMod))
            .catch(errorLoading);
        },

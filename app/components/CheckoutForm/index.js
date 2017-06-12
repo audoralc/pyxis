@@ -218,51 +218,6 @@ class CheckoutForm extends React.PureComponent {
     });
   }
 
- 
-  handleTier = () => {
-    if (this.state.tier === true) {
-    this.setState({ tier:false }); 
-  } else if (this.state.tier === false) {
-    this.setState({ tier:true }); 
-      }  
-  }
-
-  handleTierSelect = () => { 
-    const TierBlock = glamorous.div({
-      background: 'red', 
-      height: '100px', 
-      width: '100px', 
-    }); 
-
-    const TierSelect = glamorous.div({
-      background: 'blue',
-      height: '100px', 
-      width: '100px', 
-    }); 
-
-    const tierSelection = {
-        display: 'flex', 
-        flexDirection: 'row', 
-      }; 
-  if (this.state.tier === false) { 
-    return ( 
-      <section style={tierSelection}>
-           <TierBlock  onTouchTap='{this.handleSubmitTwo}{this.handleTierSelect}'> 
-             <h3> YO </h3>
-          </TierBlock>            
-        </section> 
-    )
-  } else if (this.state.tier === true) {
-      return (
-        <section style={tierSelection}>
-          <TierSelect  onTouchTap={this.handleSubmitTwo} onClick={this.handleTierSelect}>
-            <h3> YO </h3>
-          </TierSelect> 
-          </section>  
-      )
-    }
-  }
-
 
   handleCheckBox = () => {
     if (this.state.checkBox === true) {
@@ -307,7 +262,6 @@ class CheckoutForm extends React.PureComponent {
     const checkoutWrapper = {
       margin: '10%',
     }
- 
 
       const cardFormStyle = {
         display: 'flex', 
@@ -316,11 +270,12 @@ class CheckoutForm extends React.PureComponent {
          
 
     return (
-      <div style={checkoutWrapper}>
-
-            <div>  {this.handleTierSelect()} </div> 
-  
+      <div style={checkoutWrapper}>  
       <div>   
+        <section> 
+        <h2> what you selected</h2>
+        </section>
+
         <section>
           <div>
             <h2> Billing Address </h2>

@@ -126,20 +126,16 @@ class Header extends React.PureComponent {
 
         <div style={navbarStyle}>         
           <nav style={navLinksBlock}>             
-            <a href="/login" style={buttonLinkStyle}><SubButton>  Subscribe </SubButton></a>
+            <a href="/subscribe" style={buttonLinkStyle}><SubButton>  Subscribe </SubButton></a>
             <NavLink href="/about" >About</NavLink>
             <NavLink href="/contact-us" >Contact</NavLink>
             <NavLink href="/faq" >FAQ</NavLink>
             <NavLink href="/account" > Account</NavLink>  
           </nav>             
 
-            <div style={searchBlockStyle}>         
-              <FontIcon className="material-icons">search</FontIcon>
-            
-            </div> 
             
               <div style={cartStyle}> 
-              <NavLink href="/cart" > <FontIcon className="material-icons">shopping_basket</FontIcon></NavLink>   
+              <NavLink href="/checkout" > <FontIcon className="material-icons">shopping_basket</FontIcon></NavLink>   
               </div> 
         </div> 
 
