@@ -10,9 +10,9 @@ class CardSection extends React.PureComponent {
   render() {
     return (
       <div>
-        <label>
+       
           <CardElement style={{ hidePostalCode:false }} />
-        </label>
+       
       </div>
     );
   }

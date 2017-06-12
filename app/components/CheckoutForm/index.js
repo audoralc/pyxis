@@ -4,6 +4,20 @@
 import React from 'react';
 import { injectStripe } from 'react-stripe-elements';
 import CardSection from 'components/CardSection';
+import glamorous from 'glamorous'; 
+import { FaDollar } from 'react-icons/lib/fa'; 
+
+const TierBlock = glamorous.div({
+  background: '#FAFAFA',
+  border: '2px solid #FAFAFA', 
+  width: '40%', 
+  height: '20%',
+  padding: '1em',
+  margin: '0 2em',
+  textAlign: 'center',
+})
+
+
 
 class CheckoutForm extends React.PureComponent {
   constructor(props) {
@@ -23,8 +37,10 @@ class CheckoutForm extends React.PureComponent {
       deliverAddress: '',
       plan: 'tierOne',
       checkBox: false,
-    };
+      tier: false, 
+    };   
   }
+
   handleState = (event, index, value) => {
     this.setState({ value });
     this.setState({ country: value });
@@ -67,6 +83,7 @@ class CheckoutForm extends React.PureComponent {
   }
 
   handleSubmit = (ev) => {
+
     // We don't want to let default form submission happen here, which would refresh the page.
     ev.preventDefault();
 
@@ -103,7 +120,7 @@ class CheckoutForm extends React.PureComponent {
         return response.json();
       }).then((json) => {
         if (json.success) {
-          alert(json.success);
+          alert(json.success);          
         } else if (json.error) {
           alert(json.error);
         }
@@ -193,13 +210,59 @@ class CheckoutForm extends React.PureComponent {
         return response.json();
       }).then((json) => {
         if (json.success) {
-          alert(json.success);
+          alert(json.success);         
         } else if (json.error) {
           alert(json.error);
         }
       });
     });
   }
+
+ 
+  handleTier = () => {
+    if (this.state.tier === true) {
+    this.setState({ tier:false }); 
+  } else if (this.state.tier === false) {
+    this.setState({ tier:true }); 
+      }  
+  }
+
+  handleTierSelect = () => { 
+    const TierBlock = glamorous.div({
+      background: 'red', 
+      height: '100px', 
+      width: '100px', 
+    }); 
+
+    const TierSelect = glamorous.div({
+      background: 'blue',
+      height: '100px', 
+      width: '100px', 
+    }); 
+
+    const tierSelection = {
+        display: 'flex', 
+        flexDirection: 'row', 
+      }; 
+  if (this.state.tier === false) { 
+    return ( 
+      <section style={tierSelection}>
+           <TierBlock  onTouchTap='{this.handleSubmitTwo}{this.handleTierSelect}'> 
+             <h3> YO </h3>
+          </TierBlock>            
+        </section> 
+    )
+  } else if (this.state.tier === true) {
+      return (
+        <section style={tierSelection}>
+          <TierSelect  onTouchTap={this.handleSubmitTwo} onClick={this.handleTierSelect}>
+            <h3> YO </h3>
+          </TierSelect> 
+          </section>  
+      )
+    }
+  }
+
 
   handleCheckBox = () => {
     if (this.state.checkBox === true) {
@@ -212,99 +275,114 @@ class CheckoutForm extends React.PureComponent {
   handleDeliverAddress = () => {
     if (this.state.checkBox === false) {
       return (
-        <div style={{ marginTop: '10%' }}>
-          <h1>Delivery Address</h1>
+        <div>
+          <h1>Delivery Address</h1> 
+          <div> 
+              <label>   
+                <span>Address</span>        
+                <input onChange={this.handleDeliverAddress} />
+              </label> 
 
-          <div style={{ marginTop: '5%' }}>
-            <form>
-              <select onChange={this.handleDeliverState}>{this.state.value}
-                {countryDropdown}
-              </select>
-            </form>
-          </div>
+              <label> 
+                <span>City</span>  
+                <input onChange={this.handleDeliverCity} />   
+              </label> 
 
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <form>
+              <label> 
+                <span>State</span>
+                <select>
+                  {countryDropdown}
+                </select>         
+              </label>    
 
-              <input onChange={this.handleDeliverCity} placeholder=" Deliver City" />
-              <br />
-
-              <input onChange={this.handleDeliverAddress} placeholder=" Deliver Address" />
-              <br />
-
-              <input onChange={this.handleDeliverZip} placeholder=" Deliver Zipcode" />
-              <br />
-            </form>
+              <label> 
+                <span>Zip Code</span> 
+              <input onChange={this.handleDeliverZip} /> </label> 
           </div>
         </div>
       );
     }
   }
   render() {  
+    const checkoutWrapper = {
+      margin: '10%',
+    }
+ 
+
+      const cardFormStyle = {
+        display: 'flex', 
+        flexDirection: 'column', 
+      }
+         
 
     return (
-      <div>
+      <div style={checkoutWrapper}>
 
-        <section> 
-          <h2>Contacts Info</h2>
-
-            <label> Name </label>
-            <input type="text" onChange={this.handleName} placeholder="name" />             
-    
-          
-            <label> Email</label>
-            <input onChange={this.handleEmail} placeholder="Email" />
-      
-    
-            <label> Password </label>              
-            <input type="text" onChange={this.handlePassword} placeholder="password" />            
-        </section> 
-
-       
+            <div>  {this.handleTierSelect()} </div> 
+  
+      <div>   
         <section>
-     
-          <h2> Billing Address </h2>
-         
-            <select>
-              {countryDropdown}
-            </select>   
+          <div>
+            <h2> Billing Address </h2>
 
-              <label> City </label>
-              <input onChange={this.handleCity} placeholder="City" />
+              <label> 
+                <span> Address </span>
+              <input onChange={this.handleBillingAddress} />
+              </label>
 
-              <label> Address </label>
-              <input onChange={this.handleBillingAddress} placeholder="Address" />
-        
+              <label> 
+                <span>City</span>
+                <input onChange={this.handleCity} />
+              </label>
 
-        
-            <h2> Credit Card Information </h2>
-            <CardSection />     
+              <label> 
+                <span> State </span> 
+                <select>{countryDropdown}</select> 
+              </label>  
 
-     
+              <label>
+                <span>ZIP Code</span>
+                <input name="address-zip" className="field" placeholder="94110" />
+              </label>
 
-        <p> Use billing address as shipping address? </p>
+              <div>
+                <span> Use billing address as shipping address? </span>
+                <input type="checkbox" onChange={this.handleCheckBox} />
+                {this.handleDeliverAddress()}
+              </div>
+            </div> 
+            
+          <div style={cardFormStyle}> 
+              <h2> Credit Card Information </h2>              
+                <form>
+                  <label>
+                    <span>Name</span>
+                    <input name="cardholder-name" className="field" placeholder="Jane Doe" onChange={this.handleName}/>
+                  </label>
 
-        <input type="checkbox" onChange={this.handleCheckBox} text="Submit" />
-        {this.handleDeliverAddress()}
+                  <label>
+                    <span>Phone</span>
+                    <input className="field" placeholder="(123) 456-7890" type="tel" />
+                  </label>
+
+                  <label>
+                    <span>ZIP code</span>
+                    <input name="address-zip" className="field" placeholder="94110" />
+                  </label>
+
+                  <label>
+                    <span>Card</span>
+                    <div id="card-element" className="field">
+                      <CardSection />  
+                    </div>
+                  </label>
+
+                  <button type="submit">Submit</button>
+                </form>                 
+            </div> 
 
         </section>  
-
-      <section> 
-            <h3> Tier One </h3>
-            <button onTouchTap={this.handleSubmit}>
-              Submit
-            </button>
-
-            <h3> TierTwo </h3>
-            <button onTouchTap={this.handleSubmitTwo}>
-              Submit
-            </button>
-
-            <h3>Tier Three</h3>
-            <button onTouchTap={this.handleSubmitThree}>
-              Submit
-            </button>
-        </section>
+        </div> 
 
       </div> 
     );

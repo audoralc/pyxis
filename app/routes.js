@@ -73,6 +73,15 @@ export default function createRoutes() {
            .catch(errorLoading);
        },
      },
+           {
+       path: '/Checkout',
+       name: 'Checkout',
+       getComponent(nextState, comMod) {
+         import('containers/Checkout')
+           .then(loadModule(comMod))
+           .catch(errorLoading);
+       },
+     },
      {
       path: '*',
       name: 'notfound',

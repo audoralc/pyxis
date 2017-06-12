@@ -38,23 +38,28 @@ export default class Account extends React.PureComponent {
           <div style={accountStyle}> 
 
             <StyledSection label="CustInfo">
-              <h2>My Information</h2>            
+              <h2>My Information</h2>  
+
             </StyledSection>
 
             <StyledSection label="Membership">
-              <h2>My Membership</h2>    
+              <h2>My Membership</h2> 
+
             </StyledSection>
 
             <StyledSection label="PaymentTypes">
-              <h2>My Payment Info</h2>    
+              <h2>My Payment Info</h2> 
+
             </StyledSection>
 
             <StyledSection label="Deliveries">
-              <h2>My Deliveries</h2>    
+              <h2>My Deliveries</h2>  
+
             </StyledSection>
 
             <StyledSection label="Addresses">
-              <h2>My Addresses</h2>    
+              <h2>My Addresses</h2> 
+                 
             </StyledSection>
 
           </div>
