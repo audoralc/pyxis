@@ -17,19 +17,16 @@ export default class Checkout extends React.PureComponent {
      const pageGrid = { 
       display: 'grid',
       gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr 1fr', 
-      gridTemplateRows: '1fr auto auto auto auto 10%',
+      gridTemplateRows: '1fr 50vh 50vh auto auto 10%',
     }
-      const contentStyle = {
-        margin: '10%',
-      }
-
+      
     return (
          <div style={pageGrid}>
         <Helmet title="Checkout" meta={[ { name: 'description', content: 'Description of Cart' }]}/>
          <Header></Header>
 
         <BodyContainer>
-          <div style={contentStyle}>
+          <div>
             <StripeProvider apiKey="pk_test_rJKqFRMRduGAyguxdWT2TfcI">
               <CheckoutWrapper />
             </StripeProvider>

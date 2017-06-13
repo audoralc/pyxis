@@ -4,8 +4,38 @@
 import React from 'react';
 import { injectStripe } from 'react-stripe-elements';
 import CardSection from 'components/CardSection';
+import glamorous from 'glamorous'; 
 
+const StyledLabel = glamorous.label ({
+  display: 'flex', 
+  flexDirection: 'row',
+  width: '50%', 
+  justifyContent: 'space-between'})
 
+const StyledSpan = glamorous.span ({ 
+  marginRight: '1em',
+})
+
+const SubButton = glamorous.button({ 
+  background: '#0c3a7f',
+  textDecoration: 'none',
+  border: '2px solid #f6edeb',  
+  color: '#f6edeb',   
+  padding: '.25em .5em',
+  fontSize: '1.25em',  
+  ':hover' : {
+    color: '#017B63',
+    border: '2px solid #017B63',
+    background: '#f6edeb',
+  }
+})
+
+const AddRow = glamorous.div({
+  display: 'flex',
+  flexDirection: 'row', 
+  justifyContent: 'space-between',
+  width: '70%', 
+})
 
 class CheckoutForm extends React.PureComponent {
   constructor(props) {
@@ -216,117 +246,200 @@ class CheckoutForm extends React.PureComponent {
   }
 
   handleDeliverAddress = () => {
+    
+  const deliverySection = {
+    marginTop: '5vh',
+  }
+    
+    const deliveryBlock = {
+      display: 'flex', 
+      flexDirection: 'column',          
+      justifyContent: 'space-around',  
+      height: '10vh',
+    };
+
     if (this.state.checkBox === false) {
       return (
-        <div>
-          <h1>Delivery Address</h1> 
-          <div> 
-              <label>   
-                <span>Address</span>        
-                <input onChange={this.handleDeliverAddress} />
-              </label> 
+        <section style={deliverySection}> 
+          <h2>Delivery Address</h2> 
 
-              <label> 
-                <span>City</span>  
-                <input onChange={this.handleDeliverCity} />   
-              </label> 
+          <div style={deliveryBlock}>
+          
+          <AddRow> 
+                <label> 
+                  <StyledSpan> Address </StyledSpan>
+                <input onChange={this.handleBillingAddress} />
+                </label>
 
-              <label> 
-                <span>State</span>
-                <select>
-                  {countryDropdown}
-                </select>         
-              </label>    
+                <label> 
+                  <StyledSpan>City</StyledSpan>
+                  <input onChange={this.handleCity} />
+                </label>
+            </AddRow> 
 
-              <label> 
-                <span>Zip Code</span> 
-              <input onChange={this.handleDeliverZip} /> </label> 
-          </div>
-        </div>
+            <AddRow>  
+                <label> 
+                  <StyledSpan> State </StyledSpan> 
+                  <select>{countryDropdown}</select> 
+                </label>  
+           
+
+                <label>
+                  <StyledSpan>ZIP Code</StyledSpan>
+                  <input name="address-zip" className="field" placeholder="94110" />
+                </label>
+              </AddRow> 
+              </div>
+        </section>
       );
     }
   }
   render() {  
+    const yourSelection = {
+      width: '100%',
+      height: '20vh', 
+      borderTop: '2px solid #303030',
+      borderBottom: '2px solid #303030',
+      margin: '5vh 0 0 0',
+    }
     const checkoutWrapper = {
-      margin: '10%',
+      margin: '2.5% 0 0 10%',
+      display: 'flex', 
+      flexDirection: 'column',
+      justifyContent: 'space-between',
     }
 
+        const billingAddressBlock = {
+          display: 'flex', 
+          flexDirection: 'column',          
+          justifyContent: 'space-around',  
+          height: '10vh',
+        }
+
+          const addressToggle = {
+            marginTop: '2.5vh',
+          }
+    
       const cardFormStyle = {
         display: 'flex', 
         flexDirection: 'column', 
+        margin: '5vh 0',
+        width: '90%',
       }
-         
+
+        const cardInfo = {
+          display: 'flex', 
+          flexDirection: 'column', 
+          flexWrap: '1', 
+          justifyContent: 'space-between',
+          marginBottom: '1em',
+          height: '15vh',  
+        }
+
+        const cardSection = {
+          display: 'flex', 
+          flexDirection: 'column', 
+          justifyContent: 'space-around',
+          height: '8vh',
+          width: '60%',
+          marginBottom: '1em', 
+        }
+
+      const submitBlock = {
+        marginTop: '10vh',
+        textAlign: 'center',
+      }
+    
 
     return (
-      <div style={checkoutWrapper}>  
-      <div>   
-        <section> 
-        <h2> what you selected</h2>
-        </section>
+      <div> 
 
-        <section>
-          <div>
-            <h2> Billing Address </h2>
+        <section style={yourSelection}> 
+          <div> </div>
+          <div> </div>
+          <div> </div>
+        </section> 
 
-              <label> 
-                <span> Address </span>
-              <input onChange={this.handleBillingAddress} />
-              </label>
+        <div style={checkoutWrapper}>        
+          <section >
 
-              <label> 
-                <span>City</span>
-                <input onChange={this.handleCity} />
-              </label>
+              <h2> Billing Address </h2>
 
-              <label> 
-                <span> State </span> 
-                <select>{countryDropdown}</select> 
-              </label>  
+            <div style={billingAddressBlock}>
 
-              <label>
-                <span>ZIP Code</span>
-                <input name="address-zip" className="field" placeholder="94110" />
-              </label>
+                <AddRow>  
+                      <label> 
+                        <StyledSpan> Address </StyledSpan>
+                      <input onChange={this.handleBillingAddress} />
+                      </label>
 
-              <div>
-                <span> Use billing address as shipping address? </span>
-                <input type="checkbox" onChange={this.handleCheckBox} />
-                {this.handleDeliverAddress()}
-              </div>
+                      <label> 
+                        <StyledSpan>City</StyledSpan>
+                        <input onChange={this.handleCity} />
+                      </label>
+                </AddRow>
+
+                <AddRow> 
+                        <label> 
+                          <StyledSpan> State </StyledSpan> 
+                          <select>{countryDropdown}</select> 
+                        </label>  
+
+                        <label>
+                          <StyledSpan>ZIP Code</StyledSpan>
+                          <input name="address-zip" className="field" placeholder="94110" />
+                        </label>
+                </AddRow> 
+
             </div> 
-            
-          <div style={cardFormStyle}> 
-              <h2> Credit Card Information </h2>              
-                <form>
-                  <label>
-                    <span>Name</span>
-                    <input name="cardholder-name" className="field" placeholder="Jane Doe" onChange={this.handleName}/>
-                  </label>
 
-                  <label>
-                    <span>Phone</span>
-                    <input className="field" placeholder="(123) 456-7890" type="tel" />
-                  </label>
+                <div style={addressToggle}>
+                        <span> Use billing address as shipping address? </span>
+                        <input type="checkbox" onChange={this.handleCheckBox} />
+                        {this.handleDeliverAddress()}
+                </div>
+                
+            </section> 
+              
+            <section style={cardFormStyle}> 
+                <h2> Credit Card Information </h2>              
+                  <form>
+                    <div style={cardInfo}> 
+                      <StyledLabel>
+                        <span>Name</span>
+                        <input name="cardholder-name" className="field" placeholder="Jane Doe" onChange={this.handleName}/>
+                      </StyledLabel>
 
-                  <label>
-                    <span>ZIP code</span>
-                    <input name="address-zip" className="field" placeholder="94110" />
-                  </label>
+                      <StyledLabel>
+                        <span>Phone</span>
+                        <input className="field" placeholder="(123) 456-7890" type="tel" />
+                      </StyledLabel>
 
-                  <label>
-                    <span>Card</span>
-                    <div id="card-element" className="field">
-                      <CardSection />  
+                      <StyledLabel>
+                        <span>ZIP Code</span>
+                        <input name="address-zip" className="field" placeholder="94110" />
+                      </StyledLabel>
+                      </div>
+
+                      <div style={cardSection}>
+                        <label>
+                          <span>Card</span>
+                        </label>
+                          <div id="card-element" className="field">
+                            <CardSection />  
+                          </div>
+                      
+                      </div> 
+
+                    <div style={submitBlock}> 
+                      <SubButton> Submit </SubButton>
                     </div>
-                  </label>
+                  </form>             
+          </section>
 
-                  <button type="submit">Submit</button>
-                </form>                 
-            </div> 
+           
 
-        </section>  
-        </div> 
-
+          </div> 
       </div> 
     );
   }

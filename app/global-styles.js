@@ -34,6 +34,7 @@ injectGlobal`
   input, textarea {
     background-color: #f6edeb;
     border: 1px solid #000000;
+    padding: 0.25em;
   }
 
   p,
