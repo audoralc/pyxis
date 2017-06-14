@@ -3,46 +3,37 @@
  * SignInSignUp
  *
  */
-
 import React from 'react';
 import Helmet from 'react-helmet';
-import Header from 'components/Header';  
-import BodyContainer from 'components/BodyContainer'; 
-import SignUpForm from 'components/SignUpForm'; 
-import SignInForm from 'components/SignInForm'; 
-import Footer from 'components/Footer'; 
-
+import Header from 'components/Header';
+import BodyContainer from 'components/BodyContainer';
+import SignUpForm from 'components/SignUpForm';
+import SignInForm from 'components/SignInForm';
+import Footer from 'components/Footer';
 
 export default class SignInSignUp extends React.PureComponent {
   render() {
-
-    const pageGrid = { 
+    const pageGrid = {
       display: 'grid',
-      gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr 1fr', 
+      gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr 1fr',
       gridTemplateRows: '1fr auto auto auto auto 10%',
-    }
-
-      const bodyReset = {
-        display: 'flex', 
-        flexDirection: 'row', 
-
-      }
-    
+    };
+    const bodyReset = {
+      display: 'flex',
+      flexDirection: 'row',
+    };
     return (
       <div style={pageGrid}>
-        <Helmet title="SignInSignUp" meta={[ { name: 'description', content: 'Description of SignInSignUp' }]}/>
+        <Helmet title="SignInSignUp" meta={[{ name: 'description', content: 'Description of SignInSignUp' }]} />
         <Header></Header>
 
-        <BodyContainer >
-          <div style={bodyReset}> 
-          <SignInForm></SignInForm> 
-
-          <SignUpForm></SignUpForm>
+        <BodyContainer>
+          <div style={bodyReset}>
+            <SignInForm></SignInForm>
+            <SignUpForm></SignUpForm>
           </div>
         </BodyContainer>
-          
-
-        <Footer></Footer>      
+        <Footer></Footer>
       </div>
     );
   }
