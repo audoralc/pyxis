@@ -6,7 +6,9 @@
 
 import React from 'react';
 import glamorous from 'glamorous'; 
-import FontIcon from 'material-ui/FontIcon'; 
+import FontIcon from 'material-ui/FontIcon';
+import NavBar from 'components/Navbar'; 
+ 
 
 const NavLink = glamorous.a({ 
   padding: '0 .5em', 
@@ -87,28 +89,9 @@ class Header extends React.PureComponent {
               height: '24px',        
             }  
 
-            const searchBlockStyle = {
-              display: 'flex',
-              flexWrap: 'wrap', 
-              alignItems: 'center',
-              justifyContent: 'flex-start',      
-              height: '24px',
-              marginLeft: '.75em',
-            }           
-       
-                const searchBoxStyle = {
-                  width: '5vw',
-                  marginLeft: '1vw',         
-                }
 
-         const cartStyle = { 
-          marginLeft: 'auto', 
-         }
-
-         const buttonLinkStyle = {
-            textDecoration: 'none', 
-            color: '#f6edeb',  
-         }
+        
+         
         
 
     return (
@@ -122,25 +105,8 @@ class Header extends React.PureComponent {
                   </g>
               </svg>         
           </a>
-        </div>
-
-        <div style={navbarStyle}>         
-          <nav style={navLinksBlock}>             
-            <a href="/subscribe" style={buttonLinkStyle}><SubButton>  Subscribe </SubButton></a>
-            <NavLink href="/about" >About</NavLink>
-            <NavLink href="/contact-us" >Contact</NavLink>
-            <NavLink href="/faq" >FAQ</NavLink>
-            <NavLink href="/account" > Account</NavLink>  
-          </nav>             
-
-            
-              <div style={cartStyle}> 
-              <NavLink href="/checkout" > <FontIcon className="material-icons">shopping_basket</FontIcon></NavLink>   
-              </div> 
-        </div> 
-
-        
-
+        </div>         
+        <NavBar>  </NavBar>
       </div>
     );
   }
