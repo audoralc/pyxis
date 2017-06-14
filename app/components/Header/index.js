@@ -6,16 +6,14 @@
 
 import React from 'react';
 import glamorous from 'glamorous'; 
-import FontIcon from 'material-ui/FontIcon';
-import NavBar from 'components/Navbar'; 
- 
+import FontIcon from 'material-ui/FontIcon'; 
 
 const NavLink = glamorous.a({ 
   padding: '0 .5em', 
   textDecoration: 'none', 
   color: '#000000',
   ':hover' : { 
-    color: '#0c3a7f', 
+    color: '#0000b5', 
   },
   height: '24px',
 })
@@ -37,30 +35,8 @@ const SubButton = glamorous.button({
   }
 })
 
-
 class Header extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      token: sessionStorage.getItem('token'),
-    };
-  }
-
-  logOut = () => {
-    fetch('http://localhost:8000/api/lout', { 
-      headers:{'Authorization': 'Bearer ' + this.state.token },
-    }).then((response) => {
-      return response.json();
-    }).then((json) => {
-      if (json.success) {
-        sessionStorage.setItem('token', '');
-        this.setState({ token: sessionStorage.getItem('token') });
-        alert(json.success);
-      } else if (json.error) {
-        alert(json.error);
-      }
-    });
-  }
+  
 
   render() {
 
@@ -106,13 +82,32 @@ class Header extends React.PureComponent {
               display: 'flex',
               flexWrap: 'wrap', 
               alignItems: 'center',                 
-              fontSize: '1.25em',           
+              fontSize: '1.15em',           
               height: '24px',        
             }  
 
+            const searchBlockStyle = {
+              display: 'flex',
+              flexWrap: 'wrap', 
+              alignItems: 'center',
+              justifyContent: 'flex-start',      
+              height: '24px',
+              marginLeft: '.75em',
+            }           
+       
+                const searchBoxStyle = {
+                  width: '5vw',
+                  marginLeft: '1vw',         
+                }
 
-        
-         
+         const cartStyle = { 
+          marginLeft: 'auto', 
+         }
+
+         const buttonLinkStyle = {
+            textDecoration: 'none', 
+            color: '#f6edeb',  
+         }
         
 
     return (
@@ -126,31 +121,28 @@ class Header extends React.PureComponent {
                   </g>
               </svg>         
           </a>
-<<<<<<< HEAD
-        </div>         
-        <NavBar>  </NavBar>
-=======
         </div>
 
         <div style={navbarStyle}>         
           <nav style={navLinksBlock}>             
-            <a href="/subscribe" style={buttonLinkStyle}><SubButton>  Subscribe </SubButton></a>
+            <a href="/login" style={buttonLinkStyle}><SubButton>  Subscribe </SubButton></a>
             <NavLink href="/about" >About</NavLink>
             <NavLink href="/contact-us" >Contact</NavLink>
             <NavLink href="/faq" >FAQ</NavLink>
-            <NavLink href="/account" > Account</NavLink>  
-            <NavLink onClick={this.logOut} > Logout</NavLink>  
+            <NavLink href="/account" > Account</NavLink> 
+            <NavLink> Logout </NavLink> 
           </nav>             
 
+            <div style={cartStyle}> 
+              <NavLink href="/cart" > <FontIcon className="material-icons">shopping_basket</FontIcon></NavLink>   
+            </div>
+           
             
-              <div style={cartStyle}> 
-              <NavLink href="/checkout" > <FontIcon className="material-icons">shopping_basket</FontIcon></NavLink>   
-              </div> 
+               
         </div> 
 
         
 
->>>>>>> ace9acac669246c53a16ab5485c75891cec430b4
       </div>
     );
   }
