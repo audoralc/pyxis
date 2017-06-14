@@ -37,7 +37,28 @@ const SubButton = glamorous.button({
 
 
 class Header extends React.PureComponent {
-  
+  constructor(props) {
+    super(props);
+    this.state = {
+      token: sessionStorage.getItem('token'),
+    };
+  }
+
+  logOut = () => {
+    fetch('http://localhost:8000/api/lout', { 
+      headers:{'Authorization': 'Bearer ' + this.state.token },
+    }).then((response) => {
+      return response.json();
+    }).then((json) => {
+      if (json.success) {
+        sessionStorage.setItem('token', '');
+        this.setState({ token: sessionStorage.getItem('token') });
+        alert(json.success);
+      } else if (json.error) {
+        alert(json.error);
+      }
+    });
+  }
 
   render() {
 
@@ -131,6 +152,7 @@ class Header extends React.PureComponent {
             <NavLink href="/contact-us" >Contact</NavLink>
             <NavLink href="/faq" >FAQ</NavLink>
             <NavLink href="/account" > Account</NavLink>  
+            <NavLink onClick={this.logOut} > Logout</NavLink>  
           </nav>             
 
             
