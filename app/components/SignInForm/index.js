@@ -5,6 +5,7 @@
 */
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
+
 class SignInForm extends React.PureComponent {
 
   constructor(props) {
@@ -13,6 +14,8 @@ class SignInForm extends React.PureComponent {
       email: '',
       password: '',
       token: '',
+      role: '',
+      id: '',
     };
   }
 
@@ -42,10 +45,23 @@ class SignInForm extends React.PureComponent {
         alert('invalid credentials');
       } else if (json.token !== false) {
         alert('Welcome Back!');
+
         sessionStorage.setItem('token', JSON.stringify(json.token));
         this.setState({ token: sessionStorage.getItem('token') });
-        console.log(this.state.token);
+
+        sessionStorage.setItem('role', json.role);
+        this.setState({ role: sessionStorage.getItem('role') });
+
+        sessionStorage.setItem('id', json.id);
+        this.setState({ id: sessionStorage.getItem('id') });
+
+        if (json.role === 'Admin') {
+          this.context.router.push('/dashboard');
+        } else {
+          this.context.router.push('/account');
+        }
       }
+        console.log('role:' + this.state.role + 'token:' + this.state.token + 'id:' + this.state.id);
     });
   }
   render() {
@@ -55,7 +71,6 @@ class SignInForm extends React.PureComponent {
       borderRight: '2px solid #000',
       marginRight: '10%',
     };
-
     return (
       <div style={signInStyle}>
 
@@ -72,4 +87,7 @@ class SignInForm extends React.PureComponent {
   }
 }
 export default SignInForm;
+SignInForm.contextTypes = {
+  router: React.PropTypes.object,
+};
 
