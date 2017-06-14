@@ -39,7 +39,28 @@ const SubButton = glamorous.button({
 
 
 class Header extends React.PureComponent {
-  
+  constructor(props) {
+    super(props);
+    this.state = {
+      token: sessionStorage.getItem('token'),
+    };
+  }
+
+  logOut = () => {
+    fetch('http://localhost:8000/api/lout', { 
+      headers:{'Authorization': 'Bearer ' + this.state.token },
+    }).then((response) => {
+      return response.json();
+    }).then((json) => {
+      if (json.success) {
+        sessionStorage.setItem('token', '');
+        this.setState({ token: sessionStorage.getItem('token') });
+        alert(json.success);
+      } else if (json.error) {
+        alert(json.error);
+      }
+    });
+  }
 
   render() {
 
@@ -105,8 +126,31 @@ class Header extends React.PureComponent {
                   </g>
               </svg>         
           </a>
+<<<<<<< HEAD
         </div>         
         <NavBar>  </NavBar>
+=======
+        </div>
+
+        <div style={navbarStyle}>         
+          <nav style={navLinksBlock}>             
+            <a href="/subscribe" style={buttonLinkStyle}><SubButton>  Subscribe </SubButton></a>
+            <NavLink href="/about" >About</NavLink>
+            <NavLink href="/contact-us" >Contact</NavLink>
+            <NavLink href="/faq" >FAQ</NavLink>
+            <NavLink href="/account" > Account</NavLink>  
+            <NavLink onClick={this.logOut} > Logout</NavLink>  
+          </nav>             
+
+            
+              <div style={cartStyle}> 
+              <NavLink href="/checkout" > <FontIcon className="material-icons">shopping_basket</FontIcon></NavLink>   
+              </div> 
+        </div> 
+
+        
+
+>>>>>>> ace9acac669246c53a16ab5485c75891cec430b4
       </div>
     );
   }
