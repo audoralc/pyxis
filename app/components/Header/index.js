@@ -94,7 +94,7 @@ class Header extends React.PureComponent {
           alignItems: 'flex-start',
           alignContent: 'space-between',
           justifyContent: 'flex-start',   
-          margin: '1em',
+          margin: '1em .25em',
           color: '#000000',
           background: '#f6edeb',
         }         
@@ -104,7 +104,7 @@ class Header extends React.PureComponent {
               display: 'flex',
               flexWrap: 'wrap', 
               alignItems: 'center',                 
-              fontSize: '1.25em',           
+              fontSize: '1.15em',           
               height: '24px',        
             }  
 

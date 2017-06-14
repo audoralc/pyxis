@@ -17,8 +17,9 @@ class HowItWorks extends React.PureComponent {
         justifyContent: 'space-between',  
     }
 
-        const firstMonthHalf = {           
-            background: '#017B63',           
+        const months = {           
+            background: '#017B63',
+            color: '#FFECDB',            
             margin: '0',
             display: 'flex',
             flexDirection: 'row',
@@ -27,35 +28,23 @@ class HowItWorks extends React.PureComponent {
             justifyContent: 'space-between', 
           } 
 
-          const middleDoot = {
-            height: '200px',
+          const heading = {
+            color: '#FAFAFA',
+            textAlign: 'center',       
           }
-
-          const secondMonthHalf = { 
-            background: '#FAFAFA', 
-            margin: '0',     
-            display: 'flex',
-            flexDirection: 'row',
-            textAlign: 'center',           
-            padding: '3em',
-            justifyContent: 'space-between', 
-          }
-
-            const monthStyle = {
-              color: '#FFECDB', 
-            }
 
     return (
       <div style={ribbonStyle}>
-          <div style={firstMonthHalf}>
-              <div style={monthStyle}>Feb</div>   
+                  
+          <div style={heading}>
+            <h3> we do things in 7's - your delivery 7x a year</h3>
+           </div>   
+            <div style={months}>
+              <div>Feb</div>
               <div>Mar</div> 
               <div>Apr</div> 
               <div>May</div> 
               <div>June</div> 
-          </div>
-          <div style={middleDoot}> </div>   
-            <div style={secondMonthHalf}>
               <div>Jul</div>   
               <div>Aug</div> 
               <div>Sept</div> 
