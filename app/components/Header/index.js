@@ -13,7 +13,7 @@ const NavLink = glamorous.a({
   textDecoration: 'none', 
   color: '#000000',
   ':hover' : { 
-    color: '#0000b5', 
+    color: '#0c3a7f', 
   },
   height: '24px',
 })
@@ -35,8 +35,30 @@ const SubButton = glamorous.button({
   }
 })
 
+
 class Header extends React.PureComponent {
-  
+  constructor(props) {
+    super(props);
+    this.state = {
+      token: sessionStorage.getItem('token'),
+    };
+  }
+
+  logOut = () => {
+    fetch('http://localhost:8000/api/lout', { 
+      headers:{'Authorization': 'Bearer ' + this.state.token },
+    }).then((response) => {
+      return response.json();
+    }).then((json) => {
+      if (json.success) {
+        sessionStorage.setItem('token', '');
+        this.setState({ token: sessionStorage.getItem('token') });
+        alert(json.success);
+      } else if (json.error) {
+        alert(json.error);
+      }
+    });
+  }
 
   render() {
 
@@ -82,7 +104,7 @@ class Header extends React.PureComponent {
               display: 'flex',
               flexWrap: 'wrap', 
               alignItems: 'center',                 
-              fontSize: '1.15em',           
+              fontSize: '1.25em',           
               height: '24px',        
             }  
 
@@ -125,20 +147,18 @@ class Header extends React.PureComponent {
 
         <div style={navbarStyle}>         
           <nav style={navLinksBlock}>             
-            <a href="/login" style={buttonLinkStyle}><SubButton>  Subscribe </SubButton></a>
+            <a href="/subscribe" style={buttonLinkStyle}><SubButton>  Subscribe </SubButton></a>
             <NavLink href="/about" >About</NavLink>
             <NavLink href="/contact-us" >Contact</NavLink>
             <NavLink href="/faq" >FAQ</NavLink>
-            <NavLink href="/account" > Account</NavLink> 
-            <NavLink> Logout </NavLink> 
+            <NavLink href="/account" > Account</NavLink>  
+            <NavLink onClick={this.logOut} > Logout</NavLink>  
           </nav>             
 
-            <div style={cartStyle}> 
-              <NavLink href="/cart" > <FontIcon className="material-icons">shopping_basket</FontIcon></NavLink>   
-            </div>
-           
             
-               
+              <div style={cartStyle}> 
+              <NavLink href="/checkout" > <FontIcon className="material-icons">shopping_basket</FontIcon></NavLink>   
+              </div> 
         </div> 
 
         
@@ -149,3 +169,4 @@ class Header extends React.PureComponent {
 }
 
 export default Header;
+
