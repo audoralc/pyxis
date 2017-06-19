@@ -6,7 +6,43 @@
 
 import React from 'react';
 import Header from 'components/Header'; 
-/* Header witin the HomeHeadingContainer keeps bg colors */ 
+import glamorous from 'glamorous'; 
+
+const PicDiv = glamorous.div({
+  width: '60%', 
+  position: 'relative', 
+  margin: '5% auto',
+})
+
+ 
+  const StyledImg = glamorous.img({
+    ':hover' : {       
+      opacity: '1',  
+    }, 
+    display: 'block', 
+    height: 'auto', 
+    width: '100%',
+    transition: 'all 0.3s', 
+    backgroundColor: '#979216', 
+  })
+
+  const Overlay1 = glamorous.div({
+    ':hover' : { 
+      opacity: '0', 
+    },     
+      position: 'absolute',
+      top: '0', 
+      left: '0', 
+      height: '100%',
+      width: '100%',
+      opacity: '.75',
+      transition: '.5s ease',
+      backgroundColor: '#434343',     
+  })
+
+
+
+
 
 class HomeHeadingContainer extends React.PureComponent {
   render() {
@@ -57,13 +93,25 @@ class HomeHeadingContainer extends React.PureComponent {
               fontStyle: 'italic', 
             }
 
-            const logoStyle = {                
+            const logoStyle = {              
                  float: 'right',
                  marginTop: '-30%', 
             }
-
-        
    
+   
+    const currentBoxDes = {
+        color: '#fafafa',
+        textAlign: 'center', 
+        padding: '1em',
+    }
+
+    const currentTitleStyle = {
+      color: '#0c3a7f',
+      fontFamily: 'Lato, sans-serif',
+      textAlign: 'center', 
+      textDecoration: 'underline',
+    }
+      
     return (      
         <div style={bodyStyle}> 
           <Header></Header> 
@@ -86,11 +134,26 @@ class HomeHeadingContainer extends React.PureComponent {
           
           <div style={rightStyle}>
                <div style={headerBlock}> 
-                <h1 style={h1Style}> man's folly is your gain </h1>
-                <h2 style={h2Style}> bespoke luxury boxes based on the 7 sins </h2>                  
+                  <h1 style={h1Style}> man's folly is your gain </h1>
+                  <h2 style={h2Style}> bespoke luxury boxes based on the 7 sins </h2>    
+              </div>                   
+            
+            <div> 
+            <h2 style={currentTitleStyle}> Current Box </h2>    
+            <PicDiv>             
+              <StyledImg src="http://i.imgur.com/U14PRQb.png"/> 
 
-          </div>
-          
+              <Overlay1>
+                <div style={currentBoxDes}> 
+                  <h3> Midsummer (Late June - Early July) </h3>
+                  <h4> GREED </h4>
+                  <p>All that glitters lies within this box. Luxurious items made of luxurious materials. </p> 
+                </div> 
+              </Overlay1>          
+            </PicDiv>
+          </div> 
+              
+        
           </div>
           
         </div>

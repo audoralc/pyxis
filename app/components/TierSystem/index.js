@@ -5,6 +5,45 @@
 */
 
 import React from 'react';
+import glamorous from 'glamorous'; 
+
+
+
+
+
+const DetailGroup = glamorous.div({
+    display: 'flex', 
+    flexDirection: 'column',
+    alignItems: 'center',       
+    flexWrap: 'wrap',  
+    justifyContent: 'space-around',              
+    alignItems: 'center',   
+    margin: '1em 0',
+    textAlign: 'center', 
+})
+    const StyledHeader = glamorous.h2 ({
+        minWidth: '80px',
+    })
+
+    const SmallBlock = glamorous.p ({ 
+    background: '#0c3a7f',
+    height: '8vw', 
+    width: '8vw',
+  })
+
+    const MediumBlock = glamorous.p({
+          height: '16vw', 
+          width: '16vw', 
+          background: '#0c3a7f',
+    })
+
+    const LargeBlock = glamorous.p({
+          height: '20vw', 
+          width: '20vw', 
+          background: '#0c3a7f',
+    })
+
+
 
 class TierSystem extends React.PureComponent {
   render() {
@@ -17,75 +56,35 @@ class TierSystem extends React.PureComponent {
     
         const tierDetails = {                
           display: 'flex', 
-          flexDirection: 'column',
+          flexDirection: 'row',
           justifyContent: 'space-between',  
           margin: '0 auto', 
           padding: '5%',  
           width: '70%',   
         }
 
-          const detailGroup = {
-            display: 'flex', 
-            flexDirection: 'row',
-            alignItems: 'center',       
-            flexWrap: 'wrap',  
-            justifyContent: 'space-between',              
-            alignItems: 'center',   
-            margin: '1em 0',
-            textAlign: 'center',     
-          }
-
-            const smDetailBlock = {
-              background: '#0c3a7f',
-              height: '50px', 
-              width: '50px',
-                          
-            }
-
-            const mdDetailBlock = {
-              height: '80px', 
-              width: '80px', 
-              background: '#0c3a7f',
-                            
-            }
-
-            const lgDetailBlock = {
-              height: '120px', 
-              width: '120px', 
-              background: '#0c3a7f',                              
-            }
-
-            
-            const headerStyle ={ 
-              minWidth: '80px',
-            }
-
     return (
 
       <div style={tierRibbon}> 
 
         <div style={tierDetails}>    
+          
 
-          <div style={detailGroup}> 
-            <h2 style={headerStyle}> Box Sizes</h2>          
-            <p style={lgDetailBlock}>7 items</p>
-            <p style={mdDetailBlock}></p> 
-           <p style={smDetailBlock}>$79</p>     
-          </div> 
+          <DetailGroup>
+            <StyledHeader> Small </StyledHeader>
+            <SmallBlock>3 items $39</SmallBlock>   
+          </DetailGroup> 
 
-         <div style={detailGroup}> 
-            <h2 style={headerStyle}> Box Sizes</h2>          
-            <p style={lgDetailBlock}>7 items</p>
-            <p style={mdDetailBlock}></p> 
-           <p style={smDetailBlock}>$79</p>     
-          </div> 
+          <DetailGroup>
+            <StyledHeader> Medium </StyledHeader>
+            <MediumBlock>5 items $59</MediumBlock> 
+          </DetailGroup> 
 
-           <div style={detailGroup}> 
-            <h2 style={headerStyle}> Box Sizes</h2>          
-            <p style={lgDetailBlock}>7 items</p>
-            <p style={mdDetailBlock}></p> 
-           <p style={smDetailBlock}>$79</p>     
-          </div> 
+          <DetailGroup>
+            <StyledHeader> Large </StyledHeader> 
+           <LargeBlock>7 items $79</LargeBlock>     
+          </DetailGroup> 
+        
 
         </div>
 
