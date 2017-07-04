@@ -107,9 +107,9 @@ class HomeHeadingContainer extends React.PureComponent {
 
     const currentTitleStyle = {
       color: '#0c3a7f',
-      fontFamily: 'Lato, sans-serif',
+      fontFamily: 'Crimson Text, serif',
       textAlign: 'center', 
-      textDecoration: 'underline',
+      fontSize: '1.75em',
     }
       
     return (      

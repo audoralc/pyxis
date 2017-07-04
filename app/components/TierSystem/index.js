@@ -13,33 +13,32 @@ import glamorous from 'glamorous';
 
 const DetailGroup = glamorous.div({
     display: 'flex', 
-    flexDirection: 'column',
-    alignItems: 'center',       
+    flexDirection: 'row',      
     flexWrap: 'wrap',  
-    justifyContent: 'space-around',              
-    alignItems: 'center',   
+    justifyContent: 'space-between',                
     margin: '1em 0',
     textAlign: 'center', 
+    alignItems: 'center',
 })
     const StyledHeader = glamorous.h2 ({
         minWidth: '80px',
     })
 
-    const SmallBlock = glamorous.p ({ 
+    const SmallBlock = glamorous.div ({ 
     background: '#0c3a7f',
-    height: '8vw', 
-    width: '8vw',
+    height: '5vw', 
+    width: '30vw',
   })
 
-    const MediumBlock = glamorous.p({
-          height: '16vw', 
-          width: '16vw', 
+    const MediumBlock = glamorous.div({
+          height: '5vw', 
+          width: '50vw', 
           background: '#0c3a7f',
     })
 
-    const LargeBlock = glamorous.p({
-          height: '20vw', 
-          width: '20vw', 
+    const LargeBlock = glamorous.div({
+          height: '5vw', 
+          width: '70vw', 
           background: '#0c3a7f',
     })
 
@@ -53,36 +52,48 @@ class TierSystem extends React.PureComponent {
         gridRow: '3 / 3', 
         gridColumn: '1 / 6 span',       
       }
+
+        const headerStyle = {
+          textAlign: 'center', 
+          fontFamily: 'Crimson Text, serif', 
+          color: '#017B63',
+          fontSize: '2em',
+        }
     
         const tierDetails = {                
           display: 'flex', 
-          flexDirection: 'row',
+          flexDirection: 'column',
           justifyContent: 'space-between',  
           margin: '0 auto', 
-          padding: '5%',  
-          width: '70%',   
+          padding: '2.5% 5%', 
+          width: '80vw',  
+        }
+
+        const pStyle = {
+          color: '#FAFAFA',
         }
 
     return (
 
       <div style={tierRibbon}> 
+          <h3 style={headerStyle}> choose a level</h3>
 
         <div style={tierDetails}>    
           
 
-          <DetailGroup>
-            <StyledHeader> Small </StyledHeader>
-            <SmallBlock>3 items $39</SmallBlock>   
+          <DetailGroup>            
+            <SmallBlock> <p style={pStyle}> 3 items $39 </p></SmallBlock> 
+            <StyledHeader> Small </StyledHeader>  
           </DetailGroup> 
 
           <DetailGroup>
-            <StyledHeader> Medium </StyledHeader>
-            <MediumBlock>5 items $59</MediumBlock> 
+            <MediumBlock><p style={pStyle}>5 items $59</p></MediumBlock> 
+            <StyledHeader> Medium </StyledHeader>            
           </DetailGroup> 
 
           <DetailGroup>
-            <StyledHeader> Large </StyledHeader> 
-           <LargeBlock>7 items $79</LargeBlock>     
+            <LargeBlock><p style={pStyle}>7 items $79</p></LargeBlock>  
+            <StyledHeader> Large </StyledHeader>            
           </DetailGroup> 
         
 

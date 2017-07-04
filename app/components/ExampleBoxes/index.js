@@ -35,7 +35,8 @@ const PicDiv = glamorous.div({
       position: 'absolute',
       top: '0', 
       left: '0', 
-      height: '100%',
+      display: 'block', 
+      height: '30vh', 
       width: '100%',
       opacity: '.75',
       transition: '.5s ease',
@@ -52,7 +53,8 @@ const PicDiv = glamorous.div({
       position: 'absolute',
       top: '0', 
       left: '0', 
-      height: '100%',
+      display: 'block', 
+      height: '30vh', 
       width: '100%',
       opacity: '.75',
       transition: '.5s ease',
@@ -70,7 +72,8 @@ const PicDiv = glamorous.div({
       position: 'absolute',
       top: '0', 
       left: '0', 
-      height: '100%',
+      display: 'block', 
+      height: '30vh', 
       width: '100%',
       opacity: '.75',
       transition: '.5s ease',
@@ -116,9 +119,7 @@ class ExampleBoxes extends React.PureComponent {
         <h2 style={headerStyle}>Past Boxes</h2>
         <div style={imgRow}>
           
-          <PicDiv>             
-            <StyledImg src="http://i.imgur.com/7xOEkRP.jpg"/> 
-
+          <PicDiv>           
             <Overlay1>
               <h3> February </h3>
               <h4> LUST </h4>
@@ -128,8 +129,6 @@ class ExampleBoxes extends React.PureComponent {
           </PicDiv>
 
            <PicDiv>             
-            <StyledImg src="http://i.imgur.com/7xOEkRP.jpg"/> 
-
             <Overlay2>
               <h3> Spring (Late March - Early April) </h3>
               <h4> GLUTTONY </h4>
@@ -138,8 +137,6 @@ class ExampleBoxes extends React.PureComponent {
           </PicDiv>
 
            <PicDiv>             
-            <StyledImg src="http://i.imgur.com/7xOEkRP.jpg"/> 
-
             <Overlay3>
               <h3> Early Summer (Late May - Early June) </h3>
               <h4> PRIDE </h4>
